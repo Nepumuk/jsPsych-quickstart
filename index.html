@@ -100,7 +100,7 @@
 
         jsPsych.init({
             display_element: $('#jspsych_target'),
-            experiment_structure: [welcome_block, survey_block, instruction_block, test_block, survey_block 2, debrief_block],
+            experiment_structure: [welcome_block, survey_block, instruction_block, test_block, survey_block2, debrief_block],
             on_finish: function(data) {
                 $("#jspsych_target").append($('<pre>', {
                     html: jsPsych.dataAsCSV()
