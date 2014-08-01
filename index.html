@@ -9,6 +9,7 @@
         <script src="scripts/jspsych.js"></script>
         <script src="scripts/plugins/jspsych-text.js"></script>
         <script src="scripts/plugins/jspsych-single-stim.js"></script>
+        <script src="scripts/plugins/jspsych-survey-text.js"></script>
         <!-- Load the stylesheet -->
         <link href="experiment.css" type="text/css" rel="stylesheet"></link>
     </head>
@@ -37,7 +38,13 @@
 
         var debrief = "<div id='instructions'><p> Vielen Danke " +
             "participating!  Press enter to see the data.</p></div>";
-
+            
+        //defining questions that go together
+        var page_1_question = ["Please type the word you have heard"];
+        ver page_2_question = ["Did you feel stressed during the experiment?"];
+	var page_3_question = ["Age", "Gender", "Nationality", "In which country did you live most of your life?"];
+	ver page_4_question = ["What do you think was tested in this experimemt?"]
+	
         // Generating Random Order for Stimuli
         var stimuli_random_order = [];
         var opt_data = [];
@@ -52,11 +59,22 @@
         }
 
         // Define experiment blocks
-        var instruction_block = {
+        var welcome_block = {
                 type: "text",
-                text: [welcome_message, instructions],
+                text: [welcome_message],
                 timing_post_trial: 2500
             };
+        
+        var survey_block = {
+            type: 'survey-text',
+            questions: [page_1_question],
+        };
+        
+        var instruction_block = {
+                type: "text",
+                text: [instruction],
+                timing_post_trial: 2500
+            };    
 
         var test_block = {
                 type: "single-stim",
@@ -68,7 +86,12 @@
 		timing_post_trial: 2500,
                 data: opt_data
             };
-
+            
+	var survey_block2 = {
+            type: 'survey-text',
+            questions: [page_2_question, page_3_question, page_4_question],
+        };
+        
         var debrief_block = {
                 type: "text",
                 text: [debrief]
@@ -77,7 +100,7 @@
 
         jsPsych.init({
             display_element: $('#jspsych_target'),
-            experiment_structure: [instruction_block, test_block, debrief_block],
+            experiment_structure: [welcome_block, survey_block, instruction_block, test_block, survey_block 2, debrief_block],
             on_finish: function(data) {
                 $("#jspsych_target").append($('<pre>', {
                     html: jsPsych.dataAsCSV()
