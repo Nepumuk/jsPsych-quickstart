@@ -59,7 +59,7 @@
         }
 
         // Define experiment blocks
-        var welcome_block = {
+        var instruction_block = {
                 type: "text",
                 text: [welcome_message],
                 timing_post_trial: 2500
@@ -70,7 +70,7 @@
             questions: [page_1_question],
         };
         
-        var instruction_block = {
+        var instruction2_block = {
                 type: "text",
                 text: [instruction],
                 timing_post_trial: 2500
@@ -100,7 +100,7 @@
 
         jsPsych.init({
             display_element: $('#jspsych_target'),
-            experiment_structure: [welcome_block, survey_block, instruction_block, test_block, survey_block2, debrief_block],
+            experiment_structure: [instruction_block, survey_block, instruction2_block, test_block, survey_block2, debrief_block],
             on_finish: function(data) {
                 $("#jspsych_target").append($('<pre>', {
                     html: jsPsych.dataAsCSV()
