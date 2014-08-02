@@ -60,16 +60,16 @@
         
         //define blocks
 	//if-then clause
-    	var wuerfeln = Math.ceil(Math.random()*100);
+    	var wuerfeln = "34";
     	if (wuerfeln > 50) {
     		var instruction_block = {
                 type: "text",
                 text: [welcome_message],
                 timing_post_trial: 2500,
-            };
+        	};
         
         	var survey_block = {
-        	 type: 'survey-text',
+        	type: 'survey-text',
             	questions: [page_1_questions],
         	};
         
@@ -99,6 +99,7 @@
                 type: "text",
                 text: [debrief],
         	};
+        	
     	} else {
     	  	var instruction_block = {
                 type: "text",
