@@ -69,11 +69,15 @@
                 timing_post_trial: 2500,
         	};
         
+        	var sprachtest = {
+                type: "text",
+                text: [sprache],
+                timing_post_trial: 2500,
+        	};
+        	
         	var survey_block = {
-        	type: 'survey-text', 'single-stim',
-            	questions: [page_1_questions],
-            	stimuli: sprache
-            	choices: ["summer"]
+        	type: 'survey-text',
+            	questions: [page_1_questions]
         	};
         
         	var instruction2_block = {
