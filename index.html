@@ -19,7 +19,7 @@
     </body>
 
     <script>
-        // Experiment parameters
+	// Experiment parameters
         var n_trials = 30;
         var stimuli = ["img/Probe Stimuli 1.gif", "img/Probe Stimuli 2.gif"];
         var stimuli_types = ["Probe"];
@@ -57,26 +57,29 @@
                 "stimulus_type": stimuli_types[random_choice]
             });
         }
-
-        // Define experiment blocks
-        var instruction_block = {
+        
+        //define blocks
+	//if-then clause
+    	var wuerfeln = Math.ceil(Math.random()*100);
+    	if (wuerfeln > 50) {
+    		var instruction_block = {
                 type: "text",
                 text: [welcome_message],
                 timing_post_trial: 2500,
             };
         
-        var survey_block = {
-            type: 'survey-text',
-            questions: [page_1_questions],
-        };
+        	var survey_block = {
+        	 type: 'survey-text',
+            	questions: [page_1_questions],
+        	};
         
-        var instruction2_block = {
+        	var instruction2_block = {
                 type: "text",
                 text: [instructions],
                 timing_post_trial: 2500,
-        };    
+		};    
 
-        var test_block = {
+        	var test_block = {
                 type: "single-stim",
                 stimuli: stimuli_random_order,
                 choices: [37, 39],
@@ -85,19 +88,55 @@
 		continue_after_response: true,
 		timing_post_trial: 2500,
                 data: opt_data,
-        };
+        	};
             
-	var survey2_block = {
-            type: 'survey-text',
-            questions: [page_2_questions, page_3_questions, page_4_questions],
-	};
+		var survey2_block = {
+        	type: 'survey-text',
+            	questions: [page_2_questions, page_3_questions, page_4_questions],
+		};
         
-        var debrief_block = {
+        	var debrief_block = {
                 type: "text",
                 text: [debrief],
-        };
+        	};
+    	} else {
+    	  	var instruction_block = {
+                type: "text",
+                text: [welcome_message],
+                timing_post_trial: 2500,
+            	};
+        
+        	var survey_block = {
+            	type: 'survey-text',
+            	questions: [page_1_questions],
+        	};
+        
+        	var instruction2_block = {
+                type: "text",
+                text: [instructions],
+                timing_post_trial: 2500,
+        	};    
 
-
+        	var test_block = {
+                type: "single-stim",
+                stimuli: stimuli_random_order,
+                choices: [37, 39],
+		timing_post_trial: 2500,
+                data: opt_data,
+        	};
+            
+		var survey2_block = {
+            	type: 'survey-text',
+            	questions: [page_2_questions, page_3_questions, page_4_questions],
+		};
+        
+        	var debrief_block = {
+                type: "text",
+                text: [debrief],
+        	};	
+    	}
+    	// Ende If
+      
         jsPsych.init({
             display_element: $('#jspsych_target'),
             experiment_structure: [instruction_block, survey_block, instruction2_block, test_block, survey2_block, debrief_block],
