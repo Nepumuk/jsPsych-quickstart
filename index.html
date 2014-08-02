@@ -40,10 +40,10 @@
             "participating!  Press enter to see the data.</p></div>";
             
         //defining questions that go together
-        var page_1_question = ["Please type the word you have heard"];
-        ver page_2_question = ["Did you feel stressed during the experiment?"];
-	var page_3_question = ["Age", "Gender", "Nationality", "In which country did you live most of your life?"];
-	ver page_4_question = ["What do you think was tested in this experimemt?"]
+       	var page_1_questions = ["Please type the word you have heard"];
+        var page_2_questions = ["Did you feel stressed during the experiment?"];
+	var page_3_questions = ["Age", "Gender", "Nationality", "In which country did you live most of your life?"];
+	var page_4_questions = ["What do you think was tested in this experimemt?"];
 	
         // Generating Random Order for Stimuli
         var stimuli_random_order = [];
@@ -59,7 +59,7 @@
         }
 
         // Define experiment blocks
-        var instructions_block = {
+        var instruction_block = {
                 type: "text",
                 text: [welcome_message],
                 timing_post_trial: 2500
@@ -67,10 +67,10 @@
         
         var survey_block = {
             type: 'survey-text',
-            questions: [page_1_question],
+            questions: [page_1_questions],
         };
         
-        var instructions2_block = {
+        var instruction_block = {
                 type: "text",
                 text: [instructions],
                 timing_post_trial: 2500
@@ -87,9 +87,9 @@
                 data: opt_data
             };
             
-	var survey_block2 = {
+	var survey_block = {
             type: 'survey-text',
-            questions: [page_2_question, page_3_question, page_4_question],
+            questions: [page_2_questions, page_3_questions, page_4_questions],
         };
         
         var debrief_block = {
@@ -100,7 +100,7 @@
 
         jsPsych.init({
             display_element: $('#jspsych_target'),
-            experiment_structure: [instructions_block, survey_block, instructions2_block, test_block, survey_block2, debrief_block],
+            experiment_structure: [instruction_block, survey_block, instruction_block, test_block, survey_block, debrief_block],
             on_finish: function(data) {
                 $("#jspsych_target").append($('<pre>', {
                     html: jsPsych.dataAsCSV()
