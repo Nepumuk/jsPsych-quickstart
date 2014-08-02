@@ -62,18 +62,21 @@
         var instruction_block = {
                 type: "text",
                 text: [welcome_message],
-                timing_post_trial: 2500
+                timing_post_trial: 2500,
+                text-align: center
             };
         
         var survey_block = {
             type: 'survey-text',
             questions: [page_1_questions],
+            text-align: center
         };
         
         var instruction2_block = {
                 type: "text",
                 text: [instructions],
-                timing_post_trial: 2500
+                timing_post_trial: 2500,
+                text-align: center
             };    
 
         var test_block = {
@@ -84,17 +87,23 @@
 		timing_response: 4500,
 		continue_after_response: true,
 		timing_post_trial: 2500,
-                data: opt_data
+                data: opt_data,
+                display: block;
+    		margin-left: auto;
+    		margin-right: auto;
             };
             
 	var survey2_block = {
             type: 'survey-text',
             questions: [page_2_questions, page_3_questions, page_4_questions],
-        };
+            text-align: center.
+            margin: 0.25em 0em
+	};
         
         var debrief_block = {
                 type: "text",
-                text: [debrief]
+                text: [debrief],
+                text-align: center
             };
 
 
