@@ -69,7 +69,7 @@
                 timing_post_trial: 2500,
         	};
         
-        	var sprachtest = {
+        	var sprachtest_block = {
                 type: "single-stim",
                 stimuli: sprache
                 choices: [37,39],
@@ -115,7 +115,7 @@
                 timing_post_trial: 2500,
             	};
             	
-            	var sprachtest = {
+            	var sprachtest_block = {
                 type: "single-stim",
                 stimuli: sprache
                 choices: [37,39],
@@ -155,7 +155,7 @@
       
         jsPsych.init({
             display_element: $('#jspsych_target'),
-            experiment_structure: [instruction_block, sprachtest, survey_block, instruction2_block, test_block, survey2_block, debrief_block],
+            experiment_structure: [instruction_block, sprachtest_block, survey_block, instruction2_block, test_block, survey2_block, debrief_block],
             on_finish: function(data) {
                 $("#jspsych_target").append($('<pre>', {
                     html: jsPsych.dataAsCSV()
