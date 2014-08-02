@@ -70,7 +70,7 @@
             questions: [page_1_questions],
         };
         
-        var instruction_block = {
+        var instruction2_block = {
                 type: "text",
                 text: [instructions],
                 timing_post_trial: 2500
@@ -87,7 +87,7 @@
                 data: opt_data
             };
             
-	var survey_block = {
+	var survey2_block = {
             type: 'survey-text',
             questions: [page_2_questions, page_3_questions, page_4_questions],
         };
@@ -100,7 +100,7 @@
 
         jsPsych.init({
             display_element: $('#jspsych_target'),
-            experiment_structure: [instruction_block, survey_block, instruction_block, test_block, survey_block, debrief_block],
+            experiment_structure: [instruction_block, survey_block, instruction2_block, test_block, survey2_block, debrief_block],
             on_finish: function(data) {
                 $("#jspsych_target").append($('<pre>', {
                     html: jsPsych.dataAsCSV()
