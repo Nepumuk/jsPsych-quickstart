@@ -23,6 +23,7 @@
         var n_trials = 30;
         var stimuli = ["img/Probe Stimuli 1.gif", "img/Probe Stimuli 2.gif"];
         var stimuli_types = ["Probe"];
+        var sprache = ["audio/summer.mp3"];
 
         // Experiment Instructions
         var welcome_message = "<div id='instructions'><p>Welcome to the " +
@@ -60,7 +61,7 @@
         
         //define blocks
 	//if-then clause
-    	var wuerfeln = "34";
+    	var wuerfeln = "55";
     	if (wuerfeln > 50) {
     		var instruction_block = {
                 type: "text",
@@ -69,8 +70,10 @@
         	};
         
         	var survey_block = {
-        	type: 'survey-text',
+        	type: 'survey-text', 'single-stim',
             	questions: [page_1_questions],
+            	stimuli: sprache
+            	choices: ["summer"]
         	};
         
         	var instruction2_block = {
