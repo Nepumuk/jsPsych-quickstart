@@ -148,7 +148,7 @@
       
         jsPsych.init({
             display_element: $('#jspsych_target'),
-            experiment_structure: [instruction_block, survey_block, instruction2_block, test_block, survey2_block, debrief_block],
+            experiment_structure: [instruction_block, sprachtest, survey_block, instruction2_block, test_block, survey2_block, debrief_block],
             on_finish: function(data) {
                 $("#jspsych_target").append($('<pre>', {
                     html: jsPsych.dataAsCSV()
