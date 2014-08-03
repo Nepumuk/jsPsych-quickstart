@@ -72,7 +72,7 @@
         	
         	var survey_block = {
         	type: 'survey-text',
-            	questions: [page_1_questions]
+            	questions: [page_1_questions],
         	};
         	
         	var test1_block = {
@@ -125,6 +125,17 @@
             	questions: [page_1_questions],
         	};
         
+        	var test1_block = {
+                type: "single-stim",
+                stimuli: Probe Stimuli 1.gif,
+                choices: [37, 39],
+		timing_stim: 3000,
+		timing_response: 3000,
+		continue_after_response: true,
+		timing_post_trial: 2500,
+                data: opt_data,
+        	};
+        	
         	var instruction2_block = {
                 type: "text",
                 text: [instructions],
