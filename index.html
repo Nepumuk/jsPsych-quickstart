@@ -77,17 +77,7 @@
             	questions: [page_1_questions],
         	};
         	
-        	var test1_block = {
-                type: "single-stim",
-                stimuli: Probe Stimuli 1.gif,
-                choices: [37, 39],
-		timing_stim: 3000,
-		timing_response: 3000,
-		continue_after_response: true,
-		timing_post_trial: 2500,
-                data: opt_data,
-        	};
-        
+
         	var instruction2_block = {
                 type: "text",
                 text: [instructions],
@@ -127,18 +117,7 @@
             	questions: [page_1_questions],
         	};
         
-        	var test1_block = {
-                type: "single-stim",
-                stimuli: Probe Stimuli 1.gif,
-                choices: [37, 39],
-		timing_stim: 3000,
-		timing_response: 3000,
-		continue_after_response: true,
-		timing_post_trial: 2500,
-                data: opt_data,
-        	};
-        	
-        	var instruction2_block = {
+               	var instruction2_block = {
                 type: "text",
                 text: [instructions],
                 timing_post_trial: 2500,
@@ -166,7 +145,7 @@
       
         jsPsych.init({
             display_element: $('#jspsych_target'),
-            experiment_structure: [instruction_block, survey_block + test1_block, instruction2_block, test_block, survey2_block, debrief_block],
+            experiment_structure: [instruction_block, survey_block, instruction2_block, test_block, survey2_block, debrief_block],
             on_finish: function(data) {
                 $("#jspsych_target").append($('<pre>', {
                     html: jsPsych.dataAsCSV()
