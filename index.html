@@ -12,6 +12,9 @@
         <script src="scripts/plugins/jspsych-survey-text.js"></script>
         <!-- Load the stylesheet -->
         <link href="css/jspsych.css" type="text/css" rel="stylesheet"></link>
+        <!--Likert plugin--> 
+        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+	<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/black-tie/jquery-ui.min.css" rel="stylesheet" type="text/css"></link>
     </head>
 
     <body>
@@ -19,13 +22,22 @@
     </body>
 
     <script>
+    <script type="text/javascript">
+    
+    	// defining groups of questions that will go together.
+        var page_1_questions = ["I like vegetables.", "I hate eggs."];
+        var page_2_questions = ["I like fruit."];
+        
+        // definiting two different response scales that can be used.
+        var scale_1 = ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"];
+
 	// Experiment parameters
         var n_trials = 30;
         var stimuli = ["img/Probe Stimuli 1.gif", "img/Probe Stimuli 2.gif"];
         var stimuli_types = ["Probe"];
-        var sprachtest = ["audio/summer.mp3"];
+      
         //Audio
-       
+        var sprachtest = ["audio/summer.mp3"];
 
         // Experiment Instructions
         var welcome_message = "<div id='instructions'><p>Welcome to the " +
@@ -99,6 +111,13 @@
         	type: 'survey-text',
             	questions: [page_2_questions, page_3_questions, page_4_questions],
 		};
+		
+		var likert_block = {
+        	type: 'survey-likert',
+            	questions: [page_1_questions, page_2_questions],
+            	labels: [[scale_1, scale_2], [scale_1]], // need one scale for every question on a page
+            	intervals: [[5,7], [9]] // note the the intervals and labels don't necessarily need to match.
+        	};
         
         	var debrief_block = {
                 type: "text",
@@ -122,7 +141,14 @@
                 text: [instructions],
                 timing_post_trial: 2500,
         	};    
-
+		
+		var likert_block = {
+            	type: 'survey-likert',
+            	questions: [page_1_questions, page_2_questions],
+            	labels: [[scale_1, scale_2], [scale_1]], // need one scale for every question on a page
+            	intervals: [[5,7], [9]] // note the the intervals and labels don't necessarily need to match.
+        	};
+        	
         	var test_block = {
                 type: "single-stim",
                 stimuli: stimuli_random_order,
