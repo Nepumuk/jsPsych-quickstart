@@ -77,7 +77,7 @@
 	
 
         //Ringmeasure
-        var n_trials = 24;
+        var n_trials2 = 24;
         var stimuli2 = ["Ring Measure/Ring Measure 1.gif", "Ring Measure/Ring Measure 2.gif", "Ring Measure/Ring Measure 3.gif", "Ring Measure/Ring Measure 4.gif", 
         "Ring Measure/Ring Measure 5.gif", "Ring Measure/Ring Measure 6.gif", "Ring Measure/Ring Measure 7.gif", "Ring Measure/Ring Measure 8.gif", "Ring Measure/Ring Measure 9.gif", 
         "Ring Measure/Ring Measure 10.gif", "Ring Measure/Ring Measure 11.gif","Ring Measure/Ring Measure 12.gif","Ring Measure/Ring Measure 13.gif", "Ring Measure/Ring Measure 14.gif",
@@ -91,7 +91,7 @@
         var stimuli2_random_order = [];
         var opt_data = [];
 
-        for (var i = 0; i < n_trials; i++) {
+        for (var i = 0; i < n_trials2; i++) {
             var random_choice = Math.floor(Math.random() * stimuli2.length);
 
             stimuli2_random_order.push(stimuli2[random_choice]);
@@ -100,6 +100,29 @@
             });
         }
 
+	// Allocation Tasks
+	var n_trials = 25;
+	var stimuli = ["Allocation Task/Allocatio_Task_1.gif", "Allocation Task/Allocatio_Task_2.gif", "Allocation Task/Allocatio_Task_3.gif", "Allocation Task/Allocatio_Task_4.gif", 
+	"Allocation Task/Allocatio_Task_5.gif", "Allocation Task/Allocatio_Task_6.gif", "Allocation Task/Allocatio_Task_7.gif", "Allocation Task/Allocatio_Task_8.gif", 
+	"Allocation Task/Allocatio_Task_9.gif", "Allocation Task/Allocatio_Task_10.gif", "Allocation Task/Allocatio_Task_11.gif", "Allocation Task/Allocatio_Task_12.gif",
+	"Allocation Task/Allocatio_Task_13.gif", "Allocation Task/Allocatio_Task_14.gif", "Allocation Task/Allocatio_Task_15.gif", "Allocation Task/Allocatio_Task_16.gif",
+	"Allocation Task/Allocatio_Task_17.gif", "Allocation Task/Allocatio_Task_18.gif", "Allocation Task/Allocatio_Task_19.gif", "Allocation Task/Allocatio_Task_20.gif", 
+	"Allocation Task/Allocatio_Task_21.gif", "Allocation Task/Allocatio_Task_22.gif", "Allocation Task/Allocatio_Task_23.gif", "Allocation Task/Allocatio_Task_24.gif", 
+	"Allocation Task/Allocatio_Task_25.gif"];
+	var stimuli = ["Allocation Task"];
+	
+	//Generating random order for Tasks
+	var stimuli_random_order = [];
+        var opt_data = [];
+
+        for (var i = 0; i < n_trials; i++) {
+            var random_choice = Math.floor(Math.random() * stimuli.length);
+
+            stimuli_random_order.push(stimuli[random_choice]);
+            opt_data.push({
+                "stimulus_type": stimuli_types[random_choice]
+            });
+        }
 
         // Define experiment blocks
         var instruction_block = {
@@ -118,10 +141,18 @@
             type: "text",
             text: [instructions_AT, before_begin]
         };
+        
+        var test_block_Tasks = {
+                type: "single-stim",
+                stimuli: stimuli1_random_order,
+                choices: [37, 39],
+                data: opt_data
+        };
+
 
         jsPsych.init({
             display_element: $('#jspsych_target'),
-            experiment_structure: [instruction_block, test_block_RM, instruction2_block],
+            experiment_structure: [instruction_block, test_block_RM, instruction2_block, test_block_Tasks],
             on_finish: function(data) {
                 $("#jspsych_target").append($('<pre>', {
                     html: jsPsych.dataAsCSV()
