@@ -149,7 +149,7 @@
         // Define experiment blocks
         var instruction_block = {
             type: "text",
-            text: [welcome_message, instructions_RM, before_begin]
+            text: [welcome_message]
         };
         
        	var test_block_RM = {
@@ -188,12 +188,31 @@
             	questions: [page_2_questions, page_3_questions, page_4_questions],
 	};
 
+	var instruction1_block = {
+            type: "text",
+            text: [instructions_RM, before_begin]
+        };
 
 
 
         jsPsych.init({
             display_element: $('#jspsych_target'),
-            experiment_structure: [instruction_block, survey_block, test_block_RM, instruction2_block, test_block_Tasks, likert_block, survey2_block],
+            //If then clause
+            var wuerfeln = Math.ceil(Math.random()*6);
+            if (wuerfeln == 1){
+            experiment_structure: [instruction_block, survey_block, instruction1_block, test_block_RM, instruction2_block, test_block_Tasks, likert_block, survey2_block];
+            } else if (wuerfeln == 2){
+            experiment_structure: [instruction_block, survey_block, instruction1_block, test_block_RM, likert_block, instruction2_block, test_block_Tasks, survey2_block];
+            } else if (wuerfeln == 3){
+            experiment_structure: [instruction_block, survey_block, likert_block, instruction1_block, test_block_RM, instruction2_block, test_block_Tasks, survey2_block];
+            } else if (wuerfeln == 4){
+            experiment_structure: [instruction_block, survey_block, instruction1_block, test_block_RM, instruction2_block, test_block_Tasks, likert_block, survey2_block];
+            } else if (wuerfeln == 5){
+            experiment_structure: [instruction_block, survey_block, instruction1_block, test_block_RM, likert_block, instruction2_block, test_block_Tasks, survey2_block];
+            } else if (wuerfeln == 6){
+            experiment_structure: [instruction_block, survey_block, likert_block, instruction1_block, test_block_RM, instruction2_block, test_block_Tasks, survey2_block];
+            }
+            //Ende if clause
             on_finish: function(data) {
                 $("#jspsych_target").append($('<pre>', {
                     html: jsPsych.dataAsCSV()
