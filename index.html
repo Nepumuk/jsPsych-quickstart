@@ -24,32 +24,32 @@
 	var welcome_message = "<div id='instructions'><p>Welcome to the " +
 	 "experiment. Press enter to begin.</p></div>";
 	 
-	 var before_begin = "<div id='instructions'><p>Before you begin, please keep in mind that there are no right or wrong answers " +
-	 "for each question choose the option that you prefer most. Press enter to begin.</p></div>";
+//	 var before_begin = "<div id='instructions'><p>Before you begin, please keep in mind that there are no right or wrong answers " +
+//	 "for each question choose the option that you prefer most. Press enter to begin.</p>";
 	 
   //RING Measure
 
-	var instructions RM = "<div id='instructions'><p>In this task you have been randomly " +
-   	"paired with another person, whom we will refer to simply as the other. This other person " +
-   	"is someone you do not know and will remain mutually anonymous. " +
-   	"All of your choices are completely confidential. " +
-   	"You will be making a series of choices about allocating resources between you and this anonymous other person. " +
-   	"You will indicate your choices by pressing the left or right arrow key on each of the following questions. " + 
-   	"Press the left arrow key if you want to choose Option A. " +
-   	"Press the right arrow key if you want to choose Option B. " +
-   	"Your decisions will yield money for both yourself and the other person. " +
-   	"In the example below, a person has chosen to distribute money so that he/she receives 100 points, " +
-   	"where as the anonymous other person receives 80 points. To highlight the choice column B has been circled. " +
-   	"</p><p><img src='Ring Measure/Ring Measure Beispiel.gif'></p><p>"
-   	"Remember you have to use the arrow keys to indicate your choice. " +
-   	"As you can see, your choices will influence both the amount of money you receive and the amount of money the other receives. " +
-	"Press enter to begin.</p></div>";
+//	var instructions RM = "<div id='instructions'><p>In this task you have been randomly " +
+   //	"paired with another person, whom we will refer to simply as the other. This other person " +
+   //	"is someone you do not know and will remain mutually anonymous. " +
+   //	"All of your choices are completely confidential. " +
+   //	"You will be making a series of choices about allocating resources between you and this anonymous other person. " +
+   //	"You will indicate your choices by pressing the left or right arrow key on each of the following questions. " + 
+   //	"Press the left arrow key if you want to choose Option A. " +
+   //	"Press the right arrow key if you want to choose Option B. " +
+   //	"Your decisions will yield money for both yourself and the other person. " +
+   //	"In the example below, a person has chosen to distribute money so that he/she receives 100 points, " +
+   //	"where as the anonymous other person receives 80 points. To highlight the choice column B has been circled. " +
+   //	"</p><p><img src='Ring Measure/Ring Measure Beispiel.gif'></p><p>"
+   //	"Remember you have to use the arrow keys to indicate your choice. " +
+  // 	"As you can see, your choices will influence both the amount of money you receive and the amount of money the other receives. " +
+//	"Press enter to begin.</p>";
 
   // Experiment Blocks
 
 	var instruction_block = {
 		type: "text", 
-		text:[welcome_message, instructions RM, before_begin]
+		text:[welcome_message]
 	};
 	
 	jsPsych.init({
