@@ -4,7 +4,7 @@
     <head>
         <title>SVO</title>
         <!-- Load jQuery -->
-        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <!-- Load the jspsych library and plugins -->
         <script src="scripts/jspsych.js"></script>
@@ -173,9 +173,9 @@
         	};    
 		
 		var likert_block = {
-            	type: 'survey-likert',
-            	questions: [page_1_questions, page_2_questions],
-            	labels: [[scale_1, scale_2], [scale_1]], // need one scale for every question on a page
+        	type: 'survey-likert',
+            	questions: [page_IC1_questions, page_IC2_questions, page_IC3_questions, page_IC4_questions],
+            	labels: [[scale_1, scale_1, scale_1, scale_1], [scale_1, scale_1, scale_1, scale_1], [scale_1, scale_1, scale_1, scale_1],[scale_1, scale_1, scale_1, scale_1]], // need one scale for every question on a page
             	intervals: [[5,7], [9]] // note the the intervals and labels don't necessarily need to match.
         	};
         	
