@@ -1,224 +1,59 @@
 <!doctype html>
+
 <html>
+<head>
+  <title>American Version</title>
+  
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  
+  <!-- Load the jspsych library and plugins -->
+  <script src=”scripts/jspsych.js”></script>
+  <script src="scripts/plugins/jspsych-text.js"></script>
+  <script src="scripts/plugins/jspsych-single-stim.js"></script>
+  
+  
+</head>
 
-    <head>
-        <title>SVO</title>
-        <!-- Load jQuery -->
-        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <!-- Load the jspsych library and plugins -->
-        <script src="scripts/jspsych.js"></script>
-        <script src="scripts/plugins/jspsych-text.js"></script>
-        <script src="scripts/plugins/jspsych-single-stim.js"></script>
-        <script src="scripts/plugins/jspsych-survey-text.js"></script>
-        <script src="scripts/plugins/jspsych-survey-likert.js"></script>
-        <!-- Load the stylesheet -->
-	<link href="css/jspsych.css" type="text/css" rel="stylesheet"></link>
-	<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/black-tie/jquery-ui.min.css" rel="stylesheet" type="text/css"></link>
-    </head>
+<body>
+<div id="jspsych_target"></div>
+</body>
 
-    <body>
-        <div id="jspsych_target"></div>
-    </body>
+<script>
 
-    <script type="text/javascript">
-    
-    	// defining groups of questions that will go together.
-        var page_IC1_questions = ["I'd rather depend on myself than others.", "Winning is everything.", "To me, pleasure is spending time with others.","It is important to me that I respect the decisions made by my groups."];
-        var page_IC2_questions = ["I feel good when I cooperate with others.", "Competition is the law of nature.", "I rely on myself most of the time; I rarely rely on others.", "Parents and children must stay together as much as possible."];
-        var page_IC4_questions = ["It is important that I do my job better than others.", "The well-being of my coworkers is important to me.", "Family members should stick together, no matter what sacrifices are required.", "I often do "my own thing.""];
-	ver page_IC3_questions = ["My personal identity, independent of others, is very important to me.", "When another person does better than I do, I get tense and aroused.", "If a coworker gets a prize, I would feel proud.", "It is my duty to take care of my family, even when 1 have to sacrifice what I want."];
+   // Experiment Instructions
+	var welcome_message = "<div id='instructions'><p>Welcome to the " +
+	 "experiment. Press enter to begin.</p></div>";
+	 
+	 var before_begin = "<div id='instructions'><p>Before you begin, please keep in mind that there are no right or wrong answers " +
+	 "for each question choose the option that you prefer most. Press enter to begin.</p></div>";
+	 
+  //RING Measure
+
+	var instructions RM = "<div id='instructions'><p>In this task you have been randomly " +
+   	"paired with another person, whom we will refer to simply as the other. This other person " +
+   	"is someone you do not know and will remain mutually anonymous. " +
+   	"All of your choices are completely confidential. " +
+   	"You will be making a series of choices about allocating resources between you and this anonymous other person. " +
+   	"You will indicate your choices by pressing the left or right arrow key on each of the following questions. " + 
+   	"Press the left arrow key if you want to choose Option A. " +
+   	"Press the right arrow key if you want to choose Option B. " +
+   	"Your decisions will yield money for both yourself and the other person. " +
+   	"In the example below, a person has chosen to distribute money so that he/she receives 100 points, " +
+   	"where as the anonymous other person receives 80 points. To highlight the choice column B has been circled. " +
+   	"</p><p><img src='Ring Measure/Ring Measure Beispiel.gif'></p><p>"
+   	"Remember you have to use the arrow keys to indicate your choice. " +
+   	"As you can see, your choices will influence both the amount of money you receive and the amount of money the other receives. " +
+	"Press enter to begin.</p></div>";
+
+  // Experiment Blocks
+
+	var instruction_block = {type: "text", text:[welcome_message, instructions RM, before_begin]};
 	
-        // definiting two different response scales that can be used.
-        var scale_1 = ["1 = never/ definitely not", "2", "3", "4", "5", "6", "7", "8", "9 = always/ definitely yes"];
+	jsPsych.init({
+	   display_element: $('#jspsych_target'),
+           experiment_structure: [instruction_block]        
+	});
 
-	// Experiment parameters
-        var n_trials = 30;
-        var stimuli = ["img/Probe Stimuli 1.gif", "img/Probe Stimuli 2.gif"];
-        var stimuli_types = ["Probe"];
-        
-        //Ringmeasure
-        var n_trials = 24
-        var stimuli2 = ["Ring Measure 1.gif", "Ring Measure 2.gif","Ring Measure 3.gif""Ring Measure 4.gif", "Ring Measure 5.gif","Ring Measure 6.gif""Ring Measure 7.gif", "Ring Measure 8.gif","Ring Measure 9.gif""Ring Measure 10.gif", "Ring Measure 11.gif","Ring Measure 12.gif""Ring Measure 13.gif", "Ring Measure 14.gif","Ring Measure 15.gif""Ring Measure 16.gif", "Ring Measure 17.gif","Ring Measure 18.gif""Ring Measure 19.gif", "Ring Measure 20.gif","Ring Measure 21.gif""Ring Measure 22.gif", "Ring Measure 23.gif","Ring Measure 24.gif"];
-      	var stimuli2_types = ["Ring Measure"];
-      	
-        //Audio
-        var sprachtest = ["audio/summer.mp3"];
-
-        // Experiment Instructions
-        var welcome_message = "<div id='instructions'><p>Welcome to the " +
-            "experiment. To verify your nationality, please type the word you hear. " + 
-            "Press enter to begin.</p></div>";
-
-        var instructions = "<div id='instructions'><p>blablabla " +
-            "lalalalalalallalalalalalalalallallalalalallaalalal:</p><p>" +
-            "<img src='img/Probe Stimuli 1.gif'></p><p>Press the arrow " +
-            "key that corresponds to the direction that the middle arrow " +
-            "is pointing. For example, in this case you would press the " +
-            "right arrow key.</p><p>Press enter to start.</p>";
-
-        var debrief = "<div id='instructions'><p> Vielen Danke " +
-            "participating!  Press enter to see the data.</p></div>";
-            
-        //defining questions that go together
-       	var page_1_questions = ["Please listen  <audio controls=“controls“><audio src=“audio/summer.mp3“/></audio> and type the word you have heard"];
-        var page_2_questions = ["Did you feel stressed during the experiment?"];
-	var page_3_questions = ["Age", "Gender", "Nationality", "In which country did you live most of your life?"];
-	var page_4_questions = ["What do you think was tested in this experimemt?"];
 	
-        // Generating Random Order for Stimuli
-        var stimuli_random_order = [];
-        var opt_data = [];
-
-        for (var i = 0; i < n_trials; i++) {
-            var random_choice = Math.floor(Math.random() * stimuli.length);
-
-            stimuli_random_order.push(stimuli[random_choice]);
-            opt_data.push({
-                "stimulus_type": stimuli_types[random_choice]
-            });
-        }
-        
-        //Generatting random order for Ringmeasure
-        
-        var stimuli2_random_order = [];
-        var opt_data = [];
-
-        for (var i = 0; i < n_trials; i++) {
-            var random_choice = Math.floor(Math.random() * stimuli.length);
-
-            stimuli_random_order.push(stimuli[random_choice]);
-            opt_data.push({
-                "stimulus_type": stimuli2_types[random_choice]
-            });
-        }
-        
-        
-        //define blocks
-	//if-then clause
-    	var wuerfeln = Math.ceil(Math.random() * 6);
-    	if (wuerfeln > 50)
-    	{
-    		var instruction_block = {
-                type: "text",
-                text: [welcome_message],
-                timing_post_trial: 2500,
-        	};
-        	
-        	var survey_block = {
-        	type: 'survey-text',
-            	questions: [page_1_questions],
-        	};
-        	
-
-        	var instruction2_block = {
-                type: "text",
-                text: [instructions],
-                timing_post_trial: 2500,
-		};    
-
-        	var test_block = {
-                type: "single-stim",
-                stimuli: stimuli_random_order,
-                choices: [37, 39],
-		timing_stim: 4000,
-		timing_response: 4500,
-		continue_after_response: true,
-		timing_post_trial: 2500,
-                data: opt_data,
-        	};
-        	
-        	var test_block_RM = {
-                type: "single-stim",
-                stimuli: stimuli2_random_order,
-                choices: [37, 39],
-		continue_after_response: true,
-		timing_post_trial: 2500,
-                data: opt_data,
-        	};
-            
-		var survey2_block = {
-        	type: 'survey-text',
-            	questions: [page_2_questions, page_3_questions, page_4_questions],
-		};
-		
-		var likert_block = {
-        	type: 'survey-likert',
-            	questions: [page_IC1_questions, page_IC2_questions, page_IC3_questions, page_IC4_questions],
-            	labels: [[scale_1, scale_1, scale_1, scale_1], [scale_1, scale_1, scale_1, scale_1], [scale_1, scale_1, scale_1, scale_1],[scale_1, scale_1, scale_1, scale_1]], // need one scale for every question on a page
-            	intervals: [[5,7], [9]] // note the the intervals and labels don't necessarily need to match.
-        	};
-        
-        	var debrief_block = {
-                type: "text",
-                text: [debrief],
-        	};
-        	
-    	} else {
-    	  	var instruction_block = {
-                type: "text",
-                text: [welcome_message],
-                timing_post_trial: 2500,
-            	};
-        
-        	var survey_block = {
-            	type: 'survey-text',
-            	questions: [page_1_questions],
-        	};
-        
-               	var instruction2_block = {
-                type: "text",
-                text: [instructions],
-                timing_post_trial: 2500,
-        	};    
-		
-		var likert_block = {
-        	type: 'survey-likert',
-            	questions: [page_IC1_questions, page_IC2_questions, page_IC3_questions, page_IC4_questions],
-            	labels: [[scale_1, scale_1, scale_1, scale_1], [scale_1, scale_1, scale_1, scale_1], [scale_1, scale_1, scale_1, scale_1],[scale_1, scale_1, scale_1, scale_1]], // need one scale for every question on a page
-            	intervals: [[5,7], [9]] // note the the intervals and labels don't necessarily need to match.
-        	};
-        	
-        	var test_block = {
-                type: "single-stim",
-                stimuli: stimuli_random_order,
-                choices: [37, 39],
-		timing_post_trial: 2500,
-                data: opt_data,
-        	};
-            
-		var survey2_block = {
-            	type: 'survey-text',
-            	questions: [page_2_questions, page_3_questions, page_4_questions],
-		};
-		
-		var test_block_RM = {
-                type: "single-stim",
-                stimuli: stimuli2_random_order,
-                choices: [37, 39],
-		continue_after_response: true,
-		timing_post_trial: 2500,
-                data: opt_data,
-        	};
-        
-        	var debrief_block = {
-                type: "text",
-                text: [debrief],
-        	};	
-    	}
-    	// Ende If
-      
-        jsPsych.init({
-            display_element: $('#jspsych_target'),
-            experiment_structure: [instruction_block, likert_block, test_block_RM, survey_block, instruction2_block, test_block, survey2_block, debrief_block],
-            on_finish: function(data) {
-                $("#jspsych_target").append($('<pre>', {
-                    html: jsPsych.dataAsCSV()
-                }));
-
-                jsPsych.saveCSVdata("data.csv");
-            }
-        });
-    </script>
+</script>
 </html>
-
