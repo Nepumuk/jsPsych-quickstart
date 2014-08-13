@@ -25,10 +25,10 @@
     <script type="text/javascript">
     
     	// defining groups of questions that will go together.
-        var page_1_questions = ["I'd rather depend on myself than others.", "Winning is everything.", "To me, pleasure is spending time with others.","It is important to me that I respect the decisions made by my groups."];
-        var page_2_questions = ["I feel good when I cooperate with others.", "Competition is the law of nature.", "I rely on myself most of the time; I rarely rely on others.", "Parents and children must stay together as much as possible."];
-        var page_4_questions = ["It is important that I do my job better than others.", "The well-being of my coworkers is important to me.", "Family members should stick together, no matter what sacrifices are required.", "I often do "my own thing.""];
-	ver page_3_questions = ["My personal identity, independent of others, is very important to me.", "When another person does better than I do, I get tense and aroused.", "If a coworker gets a prize, I would feel proud.", "It is my duty to take care of my family, even when 1 have to sacrifice what I want."];
+        var page_IC1_questions = ["I'd rather depend on myself than others.", "Winning is everything.", "To me, pleasure is spending time with others.","It is important to me that I respect the decisions made by my groups."];
+        var page_IC2_questions = ["I feel good when I cooperate with others.", "Competition is the law of nature.", "I rely on myself most of the time; I rarely rely on others.", "Parents and children must stay together as much as possible."];
+        var page_IC4_questions = ["It is important that I do my job better than others.", "The well-being of my coworkers is important to me.", "Family members should stick together, no matter what sacrifices are required.", "I often do "my own thing.""];
+	ver page_IC3_questions = ["My personal identity, independent of others, is very important to me.", "When another person does better than I do, I get tense and aroused.", "If a coworker gets a prize, I would feel proud.", "It is my duty to take care of my family, even when 1 have to sacrifice what I want."];
 	
         // definiting two different response scales that can be used.
         var scale_1 = ["1 = never/ definitely not", "2", "3", "4", "5", "6", "7", "8", "9 = always/ definitely yes"];
@@ -37,7 +37,12 @@
         var n_trials = 30;
         var stimuli = ["img/Probe Stimuli 1.gif", "img/Probe Stimuli 2.gif"];
         var stimuli_types = ["Probe"];
-      
+        
+        //Ringmeasure
+        var n_trials = 24
+        var stimuli2 = ["Ring Measure 1.gif", "Ring Measure 2.gif","Ring Measure 3.gif""Ring Measure 4.gif", "Ring Measure 5.gif","Ring Measure 6.gif""Ring Measure 7.gif", "Ring Measure 8.gif","Ring Measure 9.gif""Ring Measure 10.gif", "Ring Measure 11.gif","Ring Measure 12.gif""Ring Measure 13.gif", "Ring Measure 14.gif","Ring Measure 15.gif""Ring Measure 16.gif", "Ring Measure 17.gif","Ring Measure 18.gif""Ring Measure 19.gif", "Ring Measure 20.gif","Ring Measure 21.gif""Ring Measure 22.gif", "Ring Measure 23.gif","Ring Measure 24.gif"];
+      	var stimuli2_types = ["Ring Measure"];
+      	
         //Audio
         var sprachtest = ["audio/summer.mp3"];
 
@@ -75,6 +80,21 @@
             });
         }
         
+        //Generatting random order for Ringmeasure
+        
+        var stimuli2_random_order = [];
+        var opt_data = [];
+
+        for (var i = 0; i < n_trials; i++) {
+            var random_choice = Math.floor(Math.random() * stimuli.length);
+
+            stimuli_random_order.push(stimuli[random_choice]);
+            opt_data.push({
+                "stimulus_type": stimuli2_types[random_choice]
+            });
+        }
+        
+        
         //define blocks
 	//if-then clause
     	var wuerfeln = Math.ceil(Math.random() * 6);
@@ -108,6 +128,15 @@
 		timing_post_trial: 2500,
                 data: opt_data,
         	};
+        	
+        	var test_block_RM = {
+                type: "single-stim",
+                stimuli: stimuli2_random_order,
+                choices: [37, 39],
+		continue_after_response: true,
+		timing_post_trial: 2500,
+                data: opt_data,
+        	};
             
 		var survey2_block = {
         	type: 'survey-text',
@@ -116,8 +145,8 @@
 		
 		var likert_block = {
         	type: 'survey-likert',
-            	questions: [page_1_questions, page_2_questions],
-            	labels: [[scale_1, scale_2], [scale_1]], // need one scale for every question on a page
+            	questions: [page_IC1_questions, page_IC2_questions, page_IC3_questions, page_IC4_questions],
+            	labels: [[scale_1, scale_1, scale_1, scale_1], [scale_1, scale_1, scale_1, scale_1], [scale_1, scale_1, scale_1, scale_1],[scale_1, scale_1, scale_1, scale_1]], // need one scale for every question on a page
             	intervals: [[5,7], [9]] // note the the intervals and labels don't necessarily need to match.
         	};
         
@@ -163,6 +192,15 @@
             	type: 'survey-text',
             	questions: [page_2_questions, page_3_questions, page_4_questions],
 		};
+		
+		var test_block_RM = {
+                type: "single-stim",
+                stimuli: stimuli2_random_order,
+                choices: [37, 39],
+		continue_after_response: true,
+		timing_post_trial: 2500,
+                data: opt_data,
+        	};
         
         	var debrief_block = {
                 type: "text",
@@ -173,7 +211,7 @@
       
         jsPsych.init({
             display_element: $('#jspsych_target'),
-            experiment_structure: [instruction_block, survey_block, instruction2_block, test_block, survey2_block, debrief_block],
+            experiment_structure: [instruction_block, likert_block, test_block_RM, survey_block, instruction2_block, test_block, survey2_block, debrief_block],
             on_finish: function(data) {
                 $("#jspsych_target").append($('<pre>', {
                     html: jsPsych.dataAsCSV()
