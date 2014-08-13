@@ -51,7 +51,12 @@
 
         //Ringmeasure
         var n_trials = 24
-        var stimuli2 = ["Ring Measure 1.gif", "Ring Measure 2.gif","Ring Measure 3.gif""Ring Measure 4.gif", "Ring Measure 5.gif","Ring Measure 6.gif""Ring Measure 7.gif", "Ring Measure 8.gif","Ring Measure 9.gif""Ring Measure 10.gif", "Ring Measure 11.gif","Ring Measure 12.gif""Ring Measure 13.gif", "Ring Measure 14.gif","Ring Measure 15.gif""Ring Measure 16.gif", "Ring Measure 17.gif","Ring Measure 18.gif""Ring Measure 19.gif", "Ring Measure 20.gif","Ring Measure 21.gif""Ring Measure 22.gif", "Ring Measure 23.gif","Ring Measure 24.gif"];
+        var stimuli2 = ["Ring Measure 1.gif", "Ring Measure 2.gif", "Ring Measure 3.gif", "Ring Measure 4.gif", 
+        "Ring Measure 5.gif", "Ring Measure 6.gif", "Ring Measure 7.gif", "Ring Measure 8.gif", "Ring Measure 9.gif", 
+        "Ring Measure 10.gif", "Ring Measure 11.gif","Ring Measure 12.gif","Ring Measure 13.gif", "Ring Measure 14.gif",
+        "Ring Measure 15.gif", "Ring Measure 16.gif", "Ring Measure 17.gif", "Ring Measure 18.gif", 
+        "Ring Measure 19.gif", "Ring Measure 20.gif", "Ring Measure 21.gif", "Ring Measure 22.gif", 
+        "Ring Measure 23.gif", "Ring Measure 24.gif"];
       	var stimuli2_types = ["Ring Measure"];
       	
       	//Generating random order for Ringmeasure
@@ -62,7 +67,7 @@
         for (var i = 0; i < n_trials; i++) {
             var random_choice = Math.floor(Math.random() * stimuli.length);
 
-            stimuli_random_order.push(stimuli[random_choice]);
+            stimuli2_random_order.push(stimuli2[random_choice]);
             opt_data.push({
                 "stimulus_type": stimuli2_types[random_choice]
             });
@@ -79,8 +84,6 @@
                 type: "single-stim",
                 stimuli: stimuli2_random_order,
                 choices: [37, 39],
-		continue_after_response: true,
-		timing_post_trial: 2500,
                 data: opt_data,
         };
 
@@ -88,7 +91,14 @@
 
         jsPsych.init({
             display_element: $('#jspsych_target'),
-            experiment_structure: [instruction_block, test_block_RM]
+            experiment_structure: [instruction_block, test_block_RM],
+            on_finish: function(data) {
+                $("#jspsych_target").append($('<pre>', {
+                    html: jsPsych.dataAsCSV()
+                }));
+
+                jsPsych.saveCSVdata("data.csv");
+            }
         });
     </script>
 
