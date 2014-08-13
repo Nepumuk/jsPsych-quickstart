@@ -4,7 +4,7 @@
     <head>
         <title>SVO</title>
         <!-- Load jQuery -->
-        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <!-- Load the jspsych library and plugins -->
         <script src="scripts/jspsych.js"></script>
@@ -13,6 +13,7 @@
         <script src="scripts/plugins/jspsych-survey-text.js"></script>
         <script src="scripts/plugins/jspsych-survey-likert.js"></script>
         <!-- Load the stylesheet -->
+	<link href="css/jspsych.css" type="text/css" rel="stylesheet"></link>
 	<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/black-tie/jquery-ui.min.css" rel="stylesheet" type="text/css"></link>
     </head>
 
@@ -20,7 +21,7 @@
         <div id="jspsych_target"></div>
     </body>
 
-    <script>
+    <script type="text/javascript">
     
     	// defining groups of questions that will go together.
         var page_IC1_questions = ["I'd rather depend on myself than others.", "Winning is everything.", "To me, pleasure is spending time with others.","It is important to me that I respect the decisions made by my groups."];
