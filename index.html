@@ -49,6 +49,33 @@
    		"and the amount of money the other receives. " +
 		"Press enter to begin.</p>";
 
+	//Allocationtask Instruction
+	var instructions_AT = "<div id='instructions'><p>In the following tasks you will again be paired with " +
+		"an anonymous other person. You will be making a series of choices about allocating resources " +
+		"between you and this other person. This other person " +
+   		"is someone you do not know and will remain mutually anonymous. " +
+   		"All of your choices are completely confidential. " +
+   		"You will indicate your choices by pressing the left or right arrow key on each of the following questions. " + 
+   		"Press the left arrow key if you want to choose Option A. " +
+   		"Press the right arrow key if you want to choose Option B. " +
+   		"Your decisions will yield money for both yourself and the other person. " +
+   		"The options show the payment you will receive, the payment of the other, " +
+   		"the total amount of money and the difference between your payment and the payment of the other person. " +
+   		"Together you receive 180 points and the difference between your payment and the payment of the other " +
+   		"person is 20 points." + 
+   		"In the example below, a person has chosen to distribute money so that he/she receives 100 points, " +
+   		"where as the anonymous other person receives 80 points." +
+   		"To highlight the choice column B has been circled. " +
+   		"</p><p><img src='Allocation Task/Allocation_Task_Beispiel.gif'></p><p>" +
+   		"Remember you have to use the arrow keys to indicate your choice. " +
+   		"As you can see, your choices will influence both the amount of money you receive" +
+   		"and the amount of money the other receives. " +
+   		"For your participation in this study you will receive a basic payment," +
+   		"but the choices you make will influence your bonus payment as well as the bonus payment of the other person. " +
+   		"Each point equals one cent, e.g. 80 points = 80 cents. " +
+		"Press enter to begin.</p>";
+	
+
         //Ringmeasure
         var n_trials = 24;
         var stimuli2 = ["Ring Measure/Ring Measure 1.gif", "Ring Measure/Ring Measure 2.gif", "Ring Measure/Ring Measure 3.gif", "Ring Measure/Ring Measure 4.gif", 
@@ -87,11 +114,14 @@
                 data: opt_data
         };
 
-
+	var instruction2_block = {
+            type: "text",
+            text: [instructions_AT, before_begin]
+        };
 
         jsPsych.init({
             display_element: $('#jspsych_target'),
-            experiment_structure: [instruction_block, test_block_RM],
+            experiment_structure: [instruction_block, test_block_RM, instruction2_block],
             on_finish: function(data) {
                 $("#jspsych_target").append($('<pre>', {
                     html: jsPsych.dataAsCSV()
