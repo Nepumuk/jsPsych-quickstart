@@ -11,7 +11,10 @@
         <script src="scripts/jspsych.js"></script>
         <script src="scripts/plugins/jspsych-text.js"></script>
         <script src="scripts/plugins/jspsych-single-stim.js"></script>
-        
+        <script src="scripts/plugins/jspsych-survey-text.js"></script>
+        <script src="scripts/plugins/jspsych-survey-likert.js"></script>
+
+        <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/black-tie/jquery-ui.min.css" rel="stylesheet" type="text/css"></link>
         <link href="css/jspsych.css" rel="stylesheet" type="text/css"></link>
     </head>
 
@@ -29,7 +32,6 @@
 	    	"for each question choose the option that you prefer most. Press enter to begin.</p>";
 	 
   	//RING Measure
-
 	var instructions_RM = "<div id='instructions'><p>In this task you have been randomly " +
     		"paired with another person, whom we will refer to simply as the other. This other person " +
    		"is someone you do not know and will remain mutually anonymous. " +
@@ -87,7 +89,6 @@
       	var stimuli2_types = ["Ring Measure"];
       	
       	//Generating random order for Ringmeasure
-        
         var stimuli2_random_order = [];
         var opt_data = [];
 
@@ -124,6 +125,23 @@
             });
         }
 
+	// Individualism & Collectivism Scale
+	// defining groups of questions that will go together.
+        var page_IC1_questions = ["I'd rather depend on myself than others.", "Winning is everything.", "To me, pleasure is spending time with others.","It is important to me that I respect the decisions made by my groups."];
+        var page_IC2_questions = ["I feel good when I cooperate with others.", "Competition is the law of nature.", "I rely on myself most of the time; I rarely rely on others.", "Parents and children must stay together as much as possible."];
+        var page_IC4_questions = ["It is important that I do my job better than others.", "The well-being of my coworkers is important to me.", "Family members should stick together, no matter what sacrifices are required.", "I often do "my own thing.""];
+	ver page_IC3_questions = ["My personal identity, independent of others, is very important to me.", "When another person does better than I do, I get tense and aroused.", "If a coworker gets a prize, I would feel proud.", "It is my duty to take care of my family, even when 1 have to sacrifice what I want."];
+	
+        // definiting two different response scales that can be used.
+        var scale_1 = ["1 = never/ definitely not", "2", "3", "4", "5", "6", "7", "8", "9 = always/ definitely yes"];
+
+        //defining questions that go together
+       	var page_1_questions = ["Please listen  <audio controls=“controls“><audio src=“audio/summer.mp3“/></audio> and type the word you have heard"];
+        var page_2_questions = ["Did you feel stressed during the experiment?"];
+	var page_3_questions = ["Age", "Gender", "Nationality", "In which country did you live most of your life?"];
+	var page_4_questions = ["What do you think was tested in this experimemt?"];
+
+      
         // Define experiment blocks
         var instruction_block = {
             type: "text",
@@ -149,10 +167,29 @@
                 data: opt_data
         };
 
+	var likert_block = {
+        	type: 'survey-likert',
+            	questions: [page_IC1_questions, page_IC2_questions, page_IC3_questions, page_IC4_questions],
+            	labels: [[scale_1, scale_1, scale_1, scale_1], [scale_1, scale_1, scale_1, scale_1], [scale_1, scale_1, scale_1, scale_1],[scale_1, scale_1, scale_1, scale_1]], // need one scale for every question on a page
+            	intervals: [[9,9,9,9],[9,9,9,9],[9,9,9,9],[9,9,9,9]] // note the the intervals and labels don't necessarily need to match.
+        };
+        
+        var survey_block = {
+        	type: 'survey-text',
+            	questions: [page_1_questions],
+        };
+        	
+        var survey2_block = {
+        	type: 'survey-text',
+            	questions: [page_2_questions, page_3_questions, page_4_questions],
+	};
+
+
+
 
         jsPsych.init({
             display_element: $('#jspsych_target'),
-            experiment_structure: [instruction_block, test_block_RM, instruction2_block, test_block_Tasks],
+            experiment_structure: [instruction_block, survey_block, test_block_RM, instruction2_block, test_block_Tasks, likert_block, survey2_block],
             on_finish: function(data) {
                 $("#jspsych_target").append($('<pre>', {
                     html: jsPsych.dataAsCSV()
