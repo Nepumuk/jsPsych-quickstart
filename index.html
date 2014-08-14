@@ -193,7 +193,7 @@
             text: [instructions_RM, before_begin]
         };
 	
-	var wuerfeln = Math.ceil(Math.random() * 6);
+	var wuerfeln = Math.ceil(Math.random(0,2) * 6);
 	if (wuerfeln <= 1){
 		jsPsych.init({
         	display_element: $('#jspsych_target'),
@@ -264,7 +264,9 @@
         	display_element: $('#jspsych_target'),
         	experiment_structure: [instruction_block, survey_block, likert_block, instruction1_block, 
         	test_block_RM, instruction2_block, test_block_Tasks, survey2_block],
-        	 on_finish: function(data) {
+        	} //Ende if
+        	
+        	on_finish: function(data) {
                  $("#jspsych_target").append($('<pre>', {
                      html: jsPsych.dataAsCSV()
                  }));
@@ -272,7 +274,7 @@
                  jsPsych.saveCSVdata("data.csv");
              }
          });
-	}//Ende
+	
 	 	
 	 
     </script>
