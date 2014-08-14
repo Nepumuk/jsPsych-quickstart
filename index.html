@@ -193,8 +193,9 @@
             text: [instructions_RM, before_begin]
         };
 	
-	var wuerfeln = Math.ceil(Math.random(0,2) * 6);
+	
 	jsPsych.init({
+		var wuerfeln = Math.ceil(Math.random(0,2) * 6);
 		if (wuerfeln <= 1){
         	display_element: $('#jspsych_target'),
        		experiment_structure: [instruction_block, survey_block, instruction1_block, test_block_RM,
