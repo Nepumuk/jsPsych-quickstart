@@ -24,7 +24,7 @@
     </body>
     <script>
     	// Randomisierung
-    	var wuerfeln = Math.ceil(Math.random(0.003) * 6);
+    	var wuerfeln = Math.ceil(Math.random() * 6);
     	//option1
     	if (wuerfeln == 6){
 		 // Experiment Instructions
@@ -189,9 +189,9 @@
 
 	var likert_block = {
         	type: 'survey-likert',
-            	questions: [page_IC1_questions, page_IC2_questions, page_IC3_questions, page_IC4_questions],
-            	labels: [[scale_1, scale_1, scale_1, scale_1], [scale_1, scale_1, scale_1, scale_1], [scale_1, scale_1, scale_1, scale_1],[scale_1, scale_1, scale_1, scale_1]], // need one scale for every question on a page
-            	intervals: [[9,9,9,9],[9,9,9,9],[9,9,9,9],[9,9,9,9]], // note the the intervals and labels don't necessarily need to match.
+            	questions: [IC1, IC2, IC3, IC4, IC5, IC6, IC7, IC8, IC9, IC10, IC11, IC12, IC13, IC14, IC15, IC16],
+            	labels: [[scale_1],[scale_1],[scale_1],[scale_1],[scale_1],[scale_1],[scale_1],[scale_1],[scale_1],[scale_1],[scale_1],[scale_1],[scale_1],[scale_1],[scale_1],[scale_1]], // need one scale for every question on a page
+            	intervals: [[9],[9],[9],[9],[9],[9],[9],[9],[9],[9],[9],[9],[9],[9],[9],[9],], // note the the intervals and labels don't necessarily need to match.
         };
         
         var survey_block = {
@@ -381,9 +381,9 @@
 
 	var likert_block = {
         	type: 'survey-likert',
-            	questions: [page_IC1_questions, page_IC2_questions, page_IC3_questions, page_IC4_questions],
-            	labels: [[scale_1, scale_1, scale_1, scale_1], [scale_1, scale_1, scale_1, scale_1], [scale_1, scale_1, scale_1, scale_1],[scale_1, scale_1, scale_1, scale_1]], // need one scale for every question on a page
-            	intervals: [[9,9,9,9],[9,9,9,9],[9,9,9,9],[9,9,9,9]], // note the the intervals and labels don't necessarily need to match.
+            	questions: [IC1, IC2, IC3, IC4, IC5, IC6, IC7, IC8, IC9, IC10, IC11, IC12, IC13, IC14, IC15, IC16],
+            	labels: [[scale_1],[scale_1],[scale_1],[scale_1],[scale_1],[scale_1],[scale_1],[scale_1],[scale_1],[scale_1],[scale_1],[scale_1],[scale_1],[scale_1],[scale_1],[scale_1]], // need one scale for every question on a page
+            	intervals: [[9],[9],[9],[9],[9],[9],[9],[9],[9],[9],[9],[9],[9],[9],[9],[9],], // note the the intervals and labels don't necessarily need to match.
         };
         
         var survey_block = {
@@ -522,14 +522,22 @@
 
 	// Individualism & Collectivism Scale
 	// defining groups of questions that will go together.
-        var page_IC1_questions = ["I'd rather depend on myself than others.", "Winning is everything.", "To me, pleasure is spending time with others.",
-        "It is important to me that I respect the decisions made by my groups."];
-        var page_IC2_questions = ["I feel good when I cooperate with others.", "Competition is the law of nature.",
-        "I rely on myself most of the time; I rarely rely on others.", "Parents and children must stay together as much as possible."];
-        var page_IC4_questions = ["It is important that I do my job better than others.", 
-        "The well-being of my coworkers is important to me.", "Family members should stick together, no matter what sacrifices are required.", "I often do my own thing."];
-	var page_IC3_questions = ["My personal identity, independent of others, is very important to me.", "When another person does better than I do, I get tense and aroused.", 
-	"If a coworker gets a prize, I would feel proud.", "It is my duty to take care of my family, even when 1 have to sacrifice what I want."];
+         var IC1 = ["I'd rather depend on myself than others."];
+        var IC2 = ["Winning is everything."];
+        var IC3 = ["To me, pleasure is spending time with others."];
+        var IC4 = ["It is important to me that I respect the decisions made by my groups."];
+        var IC5 = ["I feel good when I cooperate with others."];
+        var IC6 = ["Competition is the law of nature."];
+        var IC7 = ["I rely on myself most of the time; I rarely rely on others."];
+        var IC8 = ["Parents and children must stay together as much as possible."];
+        var IC9 = ["It is important that I do my job better than others."];
+        var IC10 = ["The well-being of my coworkers is important to me."];
+        var IC11 = ["Family members should stick together, no matter what sacrifices are required."];
+        var IC12 = ["I often do my own thing."];
+	var IC13 = ["My personal identity, independent of others, is very important to me."];
+	var IC14 = ["When another person does better than I do, I get tense and aroused."]; 
+	var IC15 = ["If a coworker gets a prize, I would feel proud."];
+	var IC16 = ["It is my duty to take care of my family, even when 1 have to sacrifice what I want."];
 	
         // definiting two different response scales that can be used.
         var scale_1 = ["1 = never/ definitely not", "2", "3", "4", "5", "6", "7", "8", "9 = always/ definitely yes"];
@@ -568,9 +576,9 @@
 
 	var likert_block = {
         	type: 'survey-likert',
-            	questions: [page_IC1_questions, page_IC2_questions, page_IC3_questions, page_IC4_questions],
-            	labels: [[scale_1, scale_1, scale_1, scale_1], [scale_1, scale_1, scale_1, scale_1], [scale_1, scale_1, scale_1, scale_1],[scale_1, scale_1, scale_1, scale_1]], // need one scale for every question on a page
-            	intervals: [[9,9,9,9],[9,9,9,9],[9,9,9,9],[9,9,9,9]], // note the the intervals and labels don't necessarily need to match.
+            	questions: [IC1, IC2, IC3, IC4, IC5, IC6, IC7, IC8, IC9, IC10, IC11, IC12, IC13, IC14, IC15, IC16],
+            	labels: [[scale_1],[scale_1],[scale_1],[scale_1],[scale_1],[scale_1],[scale_1],[scale_1],[scale_1],[scale_1],[scale_1],[scale_1],[scale_1],[scale_1],[scale_1],[scale_1]], // need one scale for every question on a page
+            	intervals: [[9],[9],[9],[9],[9],[9],[9],[9],[9],[9],[9],[9],[9],[9],[9],[9],], // note the the intervals and labels don't necessarily need to match.
         };
         
         var survey_block = {
@@ -709,14 +717,22 @@
 
 	// Individualism & Collectivism Scale
 	// defining groups of questions that will go together.
-        var page_IC1_questions = ["I'd rather depend on myself than others.", "Winning is everything.", "To me, pleasure is spending time with others.",
-        "It is important to me that I respect the decisions made by my groups."];
-        var page_IC2_questions = ["I feel good when I cooperate with others.", "Competition is the law of nature.",
-        "I rely on myself most of the time; I rarely rely on others.", "Parents and children must stay together as much as possible."];
-        var page_IC4_questions = ["It is important that I do my job better than others.", 
-        "The well-being of my coworkers is important to me.", "Family members should stick together, no matter what sacrifices are required.", "I often do my own thing."];
-	var page_IC3_questions = ["My personal identity, independent of others, is very important to me.", "When another person does better than I do, I get tense and aroused.", 
-	"If a coworker gets a prize, I would feel proud.", "It is my duty to take care of my family, even when 1 have to sacrifice what I want."];
+         var IC1 = ["I'd rather depend on myself than others."];
+        var IC2 = ["Winning is everything."];
+        var IC3 = ["To me, pleasure is spending time with others."];
+        var IC4 = ["It is important to me that I respect the decisions made by my groups."];
+        var IC5 = ["I feel good when I cooperate with others."];
+        var IC6 = ["Competition is the law of nature."];
+        var IC7 = ["I rely on myself most of the time; I rarely rely on others."];
+        var IC8 = ["Parents and children must stay together as much as possible."];
+        var IC9 = ["It is important that I do my job better than others."];
+        var IC10 = ["The well-being of my coworkers is important to me."];
+        var IC11 = ["Family members should stick together, no matter what sacrifices are required."];
+        var IC12 = ["I often do my own thing."];
+	var IC13 = ["My personal identity, independent of others, is very important to me."];
+	var IC14 = ["When another person does better than I do, I get tense and aroused."]; 
+	var IC15 = ["If a coworker gets a prize, I would feel proud."];
+	var IC16 = ["It is my duty to take care of my family, even when 1 have to sacrifice what I want."];
 	
         // definiting two different response scales that can be used.
         var scale_1 = ["1 = never/ definitely not", "2", "3", "4", "5", "6", "7", "8", "9 = always/ definitely yes"];
@@ -755,9 +771,9 @@
 
 	var likert_block = {
         	type: 'survey-likert',
-            	questions: [page_IC1_questions, page_IC2_questions, page_IC3_questions, page_IC4_questions],
-            	labels: [[scale_1, scale_1, scale_1, scale_1], [scale_1, scale_1, scale_1, scale_1], [scale_1, scale_1, scale_1, scale_1],[scale_1, scale_1, scale_1, scale_1]], // need one scale for every question on a page
-            	intervals: [[9,9,9,9],[9,9,9,9],[9,9,9,9],[9,9,9,9]], // note the the intervals and labels don't necessarily need to match.
+            	questions: [IC1, IC2, IC3, IC4, IC5, IC6, IC7, IC8, IC9, IC10, IC11, IC12, IC13, IC14, IC15, IC16],
+            	labels: [[scale_1],[scale_1],[scale_1],[scale_1],[scale_1],[scale_1],[scale_1],[scale_1],[scale_1],[scale_1],[scale_1],[scale_1],[scale_1],[scale_1],[scale_1],[scale_1]], // need one scale for every question on a page
+            	intervals: [[9],[9],[9],[9],[9],[9],[9],[9],[9],[9],[9],[9],[9],[9],[9],[9],], // note the the intervals and labels don't necessarily need to match.
         };
         
         var survey_block = {
@@ -896,14 +912,22 @@
 
 	// Individualism & Collectivism Scale
 	// defining groups of questions that will go together.
-        var page_IC1_questions = ["I'd rather depend on myself than others.", "Winning is everything.", "To me, pleasure is spending time with others.",
-        "It is important to me that I respect the decisions made by my groups."];
-        var page_IC2_questions = ["I feel good when I cooperate with others.", "Competition is the law of nature.",
-        "I rely on myself most of the time; I rarely rely on others.", "Parents and children must stay together as much as possible."];
-        var page_IC4_questions = ["It is important that I do my job better than others.", 
-        "The well-being of my coworkers is important to me.", "Family members should stick together, no matter what sacrifices are required.", "I often do my own thing."];
-	var page_IC3_questions = ["My personal identity, independent of others, is very important to me.", "When another person does better than I do, I get tense and aroused.", 
-	"If a coworker gets a prize, I would feel proud.", "It is my duty to take care of my family, even when 1 have to sacrifice what I want."];
+         var IC1 = ["I'd rather depend on myself than others."];
+        var IC2 = ["Winning is everything."];
+        var IC3 = ["To me, pleasure is spending time with others."];
+        var IC4 = ["It is important to me that I respect the decisions made by my groups."];
+        var IC5 = ["I feel good when I cooperate with others."];
+        var IC6 = ["Competition is the law of nature."];
+        var IC7 = ["I rely on myself most of the time; I rarely rely on others."];
+        var IC8 = ["Parents and children must stay together as much as possible."];
+        var IC9 = ["It is important that I do my job better than others."];
+        var IC10 = ["The well-being of my coworkers is important to me."];
+        var IC11 = ["Family members should stick together, no matter what sacrifices are required."];
+        var IC12 = ["I often do my own thing."];
+	var IC13 = ["My personal identity, independent of others, is very important to me."];
+	var IC14 = ["When another person does better than I do, I get tense and aroused."]; 
+	var IC15 = ["If a coworker gets a prize, I would feel proud."];
+	var IC16 = ["It is my duty to take care of my family, even when 1 have to sacrifice what I want."];
 	
         // definiting two different response scales that can be used.
         var scale_1 = ["1 = never/ definitely not", "2", "3", "4", "5", "6", "7", "8", "9 = always/ definitely yes"];
@@ -942,9 +966,9 @@
 
 	var likert_block = {
         	type: 'survey-likert',
-            	questions: [page_IC1_questions, page_IC2_questions, page_IC3_questions, page_IC4_questions],
-            	labels: [[scale_1, scale_1, scale_1, scale_1], [scale_1, scale_1, scale_1, scale_1], [scale_1, scale_1, scale_1, scale_1],[scale_1, scale_1, scale_1, scale_1]], // need one scale for every question on a page
-            	intervals: [[9,9,9,9],[9,9,9,9],[9,9,9,9],[9,9,9,9]], // note the the intervals and labels don't necessarily need to match.
+            	questions: [IC1, IC2, IC3, IC4, IC5, IC6, IC7, IC8, IC9, IC10, IC11, IC12, IC13, IC14, IC15, IC16],
+            	labels: [[scale_1],[scale_1],[scale_1],[scale_1],[scale_1],[scale_1],[scale_1],[scale_1],[scale_1],[scale_1],[scale_1],[scale_1],[scale_1],[scale_1],[scale_1],[scale_1]], // need one scale for every question on a page
+            	intervals: [[9],[9],[9],[9],[9],[9],[9],[9],[9],[9],[9],[9],[9],[9],[9],[9],], // note the the intervals and labels don't necessarily need to match.
         };
         
         var survey_block = {
