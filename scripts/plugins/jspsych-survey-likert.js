@@ -128,7 +128,7 @@
                 'class': 'jspsych-survey-likert',
                 "css": {
                         "width": "10%",
-                        "margin": "250px 250px 250px 250px",
+                        "margin": "100px 100px 100px 100px",
                         "padding": "0px",
                         "display": "block",
                         "position": "center"
