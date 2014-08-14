@@ -125,10 +125,14 @@
             // add submit button
             display_element.append($('<button>', {
                 'id': 'jspsych-survey-likert-next',
-                'class': 'jspsych-survey-text',
-                'text-align': 'center',
-                    
-           
+                'class': 'jspsych-survey-likert',
+                "css": {
+                        "width": "100%",
+                        "margin": "10px 0px 0px 0px",
+                        "padding": "0px",
+                        "display": "block",
+                        "position": "center"
+                    }
         
             }));
             $("#jspsych-survey-likert-next").html('Submit Answers');
