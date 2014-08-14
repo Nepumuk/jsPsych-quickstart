@@ -22,17 +22,20 @@
         <div id="jspsych_target"></div>
     </body>
     <script>
-        // Experiment Instructions
-        var welcome_message = "<div id='instructions'><p>Welcome to the " +
-            "experiment. Press enter to begin.</p></div>";
+    	// Randomisierung
+    	var wuerfeln = Math.ceil(Math.random(1)*6);
+    	if (wuerfeln == 6){
+		 // Experiment Instructions
+        	var welcome_message = "<div id='instructions'><p>Welcome to the " +
+        	 "experiment. Press enter to begin.</p></div>";
 
            
-	var before_begin = "<div id='instructions'><p>Before you begin, please keep in mind that " +
-		"there are no right or wrong answers " +
-	    	"for each question choose the option that you prefer most. Press enter to begin.</p>";
+		var before_begin = "<div id='instructions'><p>Before you begin, please keep in mind that " +
+			"there are no right or wrong answers " +
+	    		"for each question choose the option that you prefer most. Press enter to begin.</p>";
 	 
-  	//RING Measure
-	var instructions_RM = "<div id='instructions'><p>In this task you have been randomly " +
+  		//RING Measure
+		var instructions_RM = "<div id='instructions'><p>In this task you have been randomly " +
     		"paired with another person, whom we will refer to simply as the other. This other person " +
    		"is someone you do not know and will remain mutually anonymous. " +
    		"All of your choices are completely confidential. " +
@@ -78,28 +81,28 @@
 		"Press enter to begin.</p>";
 	
 
-        //Ringmeasure
-        var n_trials2 = 24;
-        var stimuli2 = ["Ring Measure/Ring Measure 1.gif", "Ring Measure/Ring Measure 2.gif", "Ring Measure/Ring Measure 3.gif", "Ring Measure/Ring Measure 4.gif", 
-        "Ring Measure/Ring Measure 5.gif", "Ring Measure/Ring Measure 6.gif", "Ring Measure/Ring Measure 7.gif", "Ring Measure/Ring Measure 8.gif", "Ring Measure/Ring Measure 9.gif", 
-        "Ring Measure/Ring Measure 10.gif", "Ring Measure/Ring Measure 11.gif","Ring Measure/Ring Measure 12.gif","Ring Measure/Ring Measure 13.gif", "Ring Measure/Ring Measure 14.gif",
-        "Ring Measure/Ring Measure 15.gif", "Ring Measure/Ring Measure 16.gif", "Ring Measure/Ring Measure 17.gif", "Ring Measure/Ring Measure 18.gif", 
-        "Ring Measure/Ring Measure 19.gif", "Ring Measure/Ring Measure 20.gif", "Ring Measure/Ring Measure 21.gif", "Ring Measure/Ring Measure 22.gif", 
-        "Ring Measure/Ring Measure 23.gif", "Ring Measure/Ring Measure 24.gif"];
-      	var stimuli2_types = ["Ring Measure"];
+        	//Ringmeasure
+        	var n_trials2 = 24;
+	 	var stimuli2 = ["Ring Measure/Ring Measure 1.gif", "Ring Measure/Ring Measure 2.gif", "Ring Measure/Ring Measure 3.gif", "Ring Measure/Ring Measure 4.gif", 
+        	"Ring Measure/Ring Measure 5.gif", "Ring Measure/Ring Measure 6.gif", "Ring Measure/Ring Measure 7.gif", "Ring Measure/Ring Measure 8.gif", "Ring Measure/Ring Measure 9.gif", 
+        	"Ring Measure/Ring Measure 10.gif", "Ring Measure/Ring Measure 11.gif","Ring Measure/Ring Measure 12.gif","Ring Measure/Ring Measure 13.gif", "Ring Measure/Ring Measure 14.gif",
+        	"Ring Measure/Ring Measure 15.gif", "Ring Measure/Ring Measure 16.gif", "Ring Measure/Ring Measure 17.gif", "Ring Measure/Ring Measure 18.gif", 
+        	"Ring Measure/Ring Measure 19.gif", "Ring Measure/Ring Measure 20.gif", "Ring Measure/Ring Measure 21.gif", "Ring Measure/Ring Measure 22.gif", 
+        	"Ring Measure/Ring Measure 23.gif", "Ring Measure/Ring Measure 24.gif"];
+      		var stimuli2_types = ["Ring Measure"];
       	
-      	//Generating random order for Ringmeasure
-        var stimuli2_random_order = [];
-        var opt_data = [];
+      		//Generating random order for Ringmeasure
+	 	var stimuli2_random_order = [];
+        	var opt_data = [];
 
-        for (var i = 0; i < n_trials2; i++) {
-            var random_choice = Math.floor(Math.random() * stimuli2.length);
+        	for (var i = 0; i < n_trials2; i++) {
+            	var random_choice = Math.floor(Math.random() * stimuli2.length);
 
-            stimuli2_random_order.push(stimuli2[random_choice]);
-            opt_data.push({
+            	stimuli2_random_order.push(stimuli2[random_choice]);
+            	opt_data.push({
                 "stimulus_type": stimuli2_types[random_choice]
-            });
-        }
+            	});
+        	}
 
 	// Allocation Tasks
 	var n_trials = 25;
@@ -194,15 +197,13 @@
         };
 	
 	
-	var wuerfeln = Math.ceil(Math.random() * 6);
-	
 	
 	jsPsych.init({
         	display_element: $('#jspsych_target'),  	
-       		experiment_structure: [ if (wuerfeln == 1){instruction_block, survey_block, instruction1_block, test_block_RM,
-		instruction2_block, test_block_Tasks, likert_block, survey2_block,
-       		} else {instruction_block, survey_block, instruction1_block, test_block_RM, likert_block,
-        	instruction2_block, test_block_Tasks, survey2_block} ],
+       		experiment_structure: [instruction_block, survey_block, instruction1_block, test_block_RM,
+		instruction2_block, test_block_Tasks, likert_block, survey2_block],
+       		//} else {instruction_block, survey_block, instruction1_block, test_block_RM, likert_block,
+        //	instruction2_block, test_block_Tasks, survey2_block} ],
         	//else if (wuerfeln == 3) {instruction_block, survey_block, likert_block, instruction1_block, test_block_RM, 
         	//instruction2_block, test_block_Tasks, survey2_block} 
         	//else if (wuerfeln == 4) {
@@ -233,6 +234,8 @@
                  jsPsych.saveCSVdata("data.csv");
              }
          });
+         
+    	} 
 	
  
     </script>
