@@ -126,6 +126,9 @@
             display_element.append($('<button>', {
                 'id': 'jspsych-survey-likert-next',
                 'class': 'jspsych-survey-likert'
+                "css": {
+                        "text-align":"center",
+                }
             }));
             $("#jspsych-survey-likert-next").html('Submit Answers');
             $("#jspsych-survey-likert-next").click(function() {
