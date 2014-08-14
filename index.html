@@ -23,7 +23,7 @@
     </body>
     <script>
     	// Randomisierung
-    	var wuerfeln = Math.ceil(Math.random(0.9) * 6);
+    	var wuerfeln = Math.ceil(Math.random() * 6);
     	//option1
     	if (wuerfeln == 6){
 		 // Experiment Instructions
@@ -213,59 +213,56 @@
         } else if (wuerfeln == 5){
 		 // Experiment Instructions
         	var welcome_message = "<div id='instructions'><p>Welcome to the " +
-        	 "experiment. Press enter to begin.</p></div>";
+        	 "experiment.</p><p> Press enter to begin.</p></div>";
 
            
 		var before_begin = "<div id='instructions'><p>Before you begin, please keep in mind that " +
-			"there are no right or wrong answers " +
-	    		"for each question choose the option that you prefer most. Press enter to begin.</p>";
+			"there are no right or wrong answers! " +
+	    		"</p><p>For each question choose the option that you prefer most.</p><p> Press enter to begin.</p>";
 	 
   		//RING Measure
 		var instructions_RM = "<div id='instructions'><p>In this task you have been randomly " +
-    		"paired with another person, whom we will refer to simply as the other. This other person " +
+    		"paired with another person, whom we will refer to simply as the <b>other</b>.</p><p>This other person " +
    		"is someone you do not know and will remain mutually anonymous. " +
    		"All of your choices are completely confidential. " +
-   		"You will be making a series of choices about allocating resources between you and this anonymous " +
+   		"</p><p>You will be making a series of choices about allocating resources between you and this anonymous " +
    		"other person. " +
-   		"You will indicate your choices by pressing the left or right arrow key on each of the following questions. " + 
-   		"Press the left arrow key if you want to choose Option A. " +
-   		"Press the right arrow key if you want to choose Option B. " +
-   		"Your decisions will yield money for both yourself and the other person. " +
-   		"In the example below, a person has chosen to distribute money so that he/she receives 100 points, " +
+   		"</p><p>You will indicate your choices by pressing the left or right arrow key on each of the following questions. " + 
+   		"</p><p><b>Press the left arrow key if you want to choose Option A. " +
+   		"</p><p>Press the right arrow key if you want to choose Option B.</b> " +
+   		"</p><p>Your decisions will yield money for both yourself and the other person. " +
+   		"</p><p>In the example below, a person has chosen to distribute money so that he/she receives 100 points, " +
    		"where as the anonymous other person receives 80 points." +
-   		"To highlight the choice column B has been circled. " +
    		"</p><p><img src='Ring Measure/Ring Measure Beispiel.gif'></p><p>" +
-   		"Remember you have to use the arrow keys to indicate your choice. " +
    		"As you can see, your choices will influence both the amount of money you receive" +
    		"and the amount of money the other receives. " +
-		"Press enter to begin.</p>";
+   		"</p><p>Remember you have to use the arrow keys to indicate your choice. </p><p>" +
+		"</p><p>Press enter to begin.</p>";
 
 	//Allocationtask Instruction
 	var instructions_AT = "<div id='instructions'><p>In the following tasks you will again be paired with " +
-		"an anonymous other person. You will be making a series of choices about allocating resources " +
+		"an <b>anonymous other person</b>. </p><p>You will be making a series of choices about allocating resources " +
 		"between you and this other person. This other person " +
    		"is someone you do not know and will remain mutually anonymous. " +
-   		"All of your choices are completely confidential. " +
-   		"You will indicate your choices by pressing the left or right arrow key on each of the following questions. " + 
-   		"Press the left arrow key if you want to choose Option A. " +
-   		"Press the right arrow key if you want to choose Option B. " +
-   		"Your decisions will yield money for both yourself and the other person. " +
-   		"The options show the payment you will receive, the payment of the other, " +
+   		"All of your choices are completely confidential. </p><p>" +
+   		"</p><p>You will indicate your choices by pressing the left or right arrow key on each of the following questions. " + 
+   		"</p><p><b>Press the left arrow key if you want to choose Option A. " +
+   		"</p><p>Press the right arrow key if you want to choose Option B.</b> " +
+   		"</p><p>Your decisions will yield money for both yourself and the other person. " +
+   		"</p><p>The options show the payment you will receive, the payment of the other, " +
    		"the total amount of money and the difference between your payment and the payment of the other person. " +
-   		"Together you receive 180 points and the difference between your payment and the payment of the other " +
-   		"person is 20 points." + 
-   		"In the example below, a person has chosen to distribute money so that he/she receives 100 points, " +
+   		"</p><p>In the example below, a person has chosen to distribute money so that he/she receives 100 points, " +
    		"where as the anonymous other person receives 80 points." +
-   		"To highlight the choice column B has been circled. " +
+   		"Together you receive 180 points and the difference between your payment and the payment of the other " +
+   		"person is 20 points." +
    		"</p><p><img src='Allocation Task/Allocation_Task_Beispiel.gif'></p><p>" +
-   		"Remember you have to use the arrow keys to indicate your choice. " +
    		"As you can see, your choices will influence both the amount of money you receive" +
    		"and the amount of money the other receives. " +
-   		"For your participation in this study you will receive a basic payment," +
+   		"</p><p>For your participation in this study you will receive a basic payment," +
    		"but the choices you make will influence your bonus payment as well as the bonus payment of the other person. " +
-   		"Each point equals one cent, e.g. 80 points = 80 cents. " +
-		"Press enter to begin.</p>";
-	
+   		"Each point equals one cent, e.g. 80 points = 80 cents.</p><p> " +
+   		
+		"</p><p>Press enter to begin.</p>";
 
         	//Ringmeasure
         	var n_trials2 = 24;
@@ -402,58 +399,56 @@
     	} else if (wuerfeln == 4){
 		 // Experiment Instructions
         	var welcome_message = "<div id='instructions'><p>Welcome to the " +
-        	 "experiment. Press enter to begin.</p></div>";
+        	 "experiment.</p><p> Press enter to begin.</p></div>";
 
            
 		var before_begin = "<div id='instructions'><p>Before you begin, please keep in mind that " +
-			"there are no right or wrong answers " +
-	    		"for each question choose the option that you prefer most. Press enter to begin.</p>";
+			"there are no right or wrong answers! " +
+	    		"</p><p>For each question choose the option that you prefer most.</p><p> Press enter to begin.</p>";
 	 
   		//RING Measure
 		var instructions_RM = "<div id='instructions'><p>In this task you have been randomly " +
-    		"paired with another person, whom we will refer to simply as the other. This other person " +
+    		"paired with another person, whom we will refer to simply as the <b>other</b>.</p><p>This other person " +
    		"is someone you do not know and will remain mutually anonymous. " +
    		"All of your choices are completely confidential. " +
-   		"You will be making a series of choices about allocating resources between you and this anonymous " +
+   		"</p><p>You will be making a series of choices about allocating resources between you and this anonymous " +
    		"other person. " +
-   		"You will indicate your choices by pressing the left or right arrow key on each of the following questions. " + 
-   		"Press the left arrow key if you want to choose Option A. " +
-   		"Press the right arrow key if you want to choose Option B. " +
-   		"Your decisions will yield money for both yourself and the other person. " +
-   		"In the example below, a person has chosen to distribute money so that he/she receives 100 points, " +
+   		"</p><p>You will indicate your choices by pressing the left or right arrow key on each of the following questions. " + 
+   		"</p><p><b>Press the left arrow key if you want to choose Option A. " +
+   		"</p><p>Press the right arrow key if you want to choose Option B.</b> " +
+   		"</p><p>Your decisions will yield money for both yourself and the other person. " +
+   		"</p><p>In the example below, a person has chosen to distribute money so that he/she receives 100 points, " +
    		"where as the anonymous other person receives 80 points." +
-   		"To highlight the choice column B has been circled. " +
    		"</p><p><img src='Ring Measure/Ring Measure Beispiel.gif'></p><p>" +
-   		"Remember you have to use the arrow keys to indicate your choice. " +
    		"As you can see, your choices will influence both the amount of money you receive" +
    		"and the amount of money the other receives. " +
-		"Press enter to begin.</p>";
+   		"</p><p>Remember you have to use the arrow keys to indicate your choice. </p><p>" +
+		"</p><p>Press enter to begin.</p>";
 
 	//Allocationtask Instruction
 	var instructions_AT = "<div id='instructions'><p>In the following tasks you will again be paired with " +
-		"an anonymous other person. You will be making a series of choices about allocating resources " +
+		"an <b>anonymous other person</b>. </p><p>You will be making a series of choices about allocating resources " +
 		"between you and this other person. This other person " +
    		"is someone you do not know and will remain mutually anonymous. " +
-   		"All of your choices are completely confidential. " +
-   		"You will indicate your choices by pressing the left or right arrow key on each of the following questions. " + 
-   		"Press the left arrow key if you want to choose Option A. " +
-   		"Press the right arrow key if you want to choose Option B. " +
-   		"Your decisions will yield money for both yourself and the other person. " +
-   		"The options show the payment you will receive, the payment of the other, " +
+   		"All of your choices are completely confidential. </p><p>" +
+   		"</p><p>You will indicate your choices by pressing the left or right arrow key on each of the following questions. " + 
+   		"</p><p><b>Press the left arrow key if you want to choose Option A. " +
+   		"</p><p>Press the right arrow key if you want to choose Option B.</b> " +
+   		"</p><p>Your decisions will yield money for both yourself and the other person. " +
+   		"</p><p>The options show the payment you will receive, the payment of the other, " +
    		"the total amount of money and the difference between your payment and the payment of the other person. " +
-   		"Together you receive 180 points and the difference between your payment and the payment of the other " +
-   		"person is 20 points." + 
-   		"In the example below, a person has chosen to distribute money so that he/she receives 100 points, " +
+   		"</p><p>In the example below, a person has chosen to distribute money so that he/she receives 100 points, " +
    		"where as the anonymous other person receives 80 points." +
-   		"To highlight the choice column B has been circled. " +
+   		"Together you receive 180 points and the difference between your payment and the payment of the other " +
+   		"person is 20 points." +
    		"</p><p><img src='Allocation Task/Allocation_Task_Beispiel.gif'></p><p>" +
-   		"Remember you have to use the arrow keys to indicate your choice. " +
    		"As you can see, your choices will influence both the amount of money you receive" +
    		"and the amount of money the other receives. " +
-   		"For your participation in this study you will receive a basic payment," +
+   		"</p><p>For your participation in this study you will receive a basic payment," +
    		"but the choices you make will influence your bonus payment as well as the bonus payment of the other person. " +
-   		"Each point equals one cent, e.g. 80 points = 80 cents. " +
-		"Press enter to begin.</p>";
+   		"Each point equals one cent, e.g. 80 points = 80 cents.</p><p> " +
+   		
+		"</p><p>Press enter to begin.</p>";
 	
 
         	//Ringmeasure
@@ -591,58 +586,56 @@
     	} else if (wuerfeln == 3){
 		 // Experiment Instructions
         	var welcome_message = "<div id='instructions'><p>Welcome to the " +
-        	 "experiment. Press enter to begin.</p></div>";
+        	 "experiment.</p><p> Press enter to begin.</p></div>";
 
            
 		var before_begin = "<div id='instructions'><p>Before you begin, please keep in mind that " +
-			"there are no right or wrong answers " +
-	    		"for each question choose the option that you prefer most. Press enter to begin.</p>";
+			"there are no right or wrong answers! " +
+	    		"</p><p>For each question choose the option that you prefer most.</p><p> Press enter to begin.</p>";
 	 
   		//RING Measure
 		var instructions_RM = "<div id='instructions'><p>In this task you have been randomly " +
-    		"paired with another person, whom we will refer to simply as the other. This other person " +
+    		"paired with another person, whom we will refer to simply as the <b>other</b>.</p><p>This other person " +
    		"is someone you do not know and will remain mutually anonymous. " +
    		"All of your choices are completely confidential. " +
-   		"You will be making a series of choices about allocating resources between you and this anonymous " +
+   		"</p><p>You will be making a series of choices about allocating resources between you and this anonymous " +
    		"other person. " +
-   		"You will indicate your choices by pressing the left or right arrow key on each of the following questions. " + 
-   		"Press the left arrow key if you want to choose Option A. " +
-   		"Press the right arrow key if you want to choose Option B. " +
-   		"Your decisions will yield money for both yourself and the other person. " +
-   		"In the example below, a person has chosen to distribute money so that he/she receives 100 points, " +
+   		"</p><p>You will indicate your choices by pressing the left or right arrow key on each of the following questions. " + 
+   		"</p><p><b>Press the left arrow key if you want to choose Option A. " +
+   		"</p><p>Press the right arrow key if you want to choose Option B.</b> " +
+   		"</p><p>Your decisions will yield money for both yourself and the other person. " +
+   		"</p><p>In the example below, a person has chosen to distribute money so that he/she receives 100 points, " +
    		"where as the anonymous other person receives 80 points." +
-   		"To highlight the choice column B has been circled. " +
    		"</p><p><img src='Ring Measure/Ring Measure Beispiel.gif'></p><p>" +
-   		"Remember you have to use the arrow keys to indicate your choice. " +
    		"As you can see, your choices will influence both the amount of money you receive" +
    		"and the amount of money the other receives. " +
-		"Press enter to begin.</p>";
+   		"</p><p>Remember you have to use the arrow keys to indicate your choice. </p><p>" +
+		"</p><p>Press enter to begin.</p>";
 
 	//Allocationtask Instruction
 	var instructions_AT = "<div id='instructions'><p>In the following tasks you will again be paired with " +
-		"an anonymous other person. You will be making a series of choices about allocating resources " +
+		"an <b>anonymous other person</b>. </p><p>You will be making a series of choices about allocating resources " +
 		"between you and this other person. This other person " +
    		"is someone you do not know and will remain mutually anonymous. " +
-   		"All of your choices are completely confidential. " +
-   		"You will indicate your choices by pressing the left or right arrow key on each of the following questions. " + 
-   		"Press the left arrow key if you want to choose Option A. " +
-   		"Press the right arrow key if you want to choose Option B. " +
-   		"Your decisions will yield money for both yourself and the other person. " +
-   		"The options show the payment you will receive, the payment of the other, " +
+   		"All of your choices are completely confidential. </p><p>" +
+   		"</p><p>You will indicate your choices by pressing the left or right arrow key on each of the following questions. " + 
+   		"</p><p><b>Press the left arrow key if you want to choose Option A. " +
+   		"</p><p>Press the right arrow key if you want to choose Option B.</b> " +
+   		"</p><p>Your decisions will yield money for both yourself and the other person. " +
+   		"</p><p>The options show the payment you will receive, the payment of the other, " +
    		"the total amount of money and the difference between your payment and the payment of the other person. " +
-   		"Together you receive 180 points and the difference between your payment and the payment of the other " +
-   		"person is 20 points." + 
-   		"In the example below, a person has chosen to distribute money so that he/she receives 100 points, " +
+   		"</p><p>In the example below, a person has chosen to distribute money so that he/she receives 100 points, " +
    		"where as the anonymous other person receives 80 points." +
-   		"To highlight the choice column B has been circled. " +
+   		"Together you receive 180 points and the difference between your payment and the payment of the other " +
+   		"person is 20 points." +
    		"</p><p><img src='Allocation Task/Allocation_Task_Beispiel.gif'></p><p>" +
-   		"Remember you have to use the arrow keys to indicate your choice. " +
    		"As you can see, your choices will influence both the amount of money you receive" +
    		"and the amount of money the other receives. " +
-   		"For your participation in this study you will receive a basic payment," +
+   		"</p><p>For your participation in this study you will receive a basic payment," +
    		"but the choices you make will influence your bonus payment as well as the bonus payment of the other person. " +
-   		"Each point equals one cent, e.g. 80 points = 80 cents. " +
-		"Press enter to begin.</p>";
+   		"Each point equals one cent, e.g. 80 points = 80 cents.</p><p> " +
+   		
+		"</p><p>Press enter to begin.</p>";
 	
 
         	//Ringmeasure
@@ -780,58 +773,56 @@
     	} else if (wuerfeln == 2){
 		 // Experiment Instructions
         	var welcome_message = "<div id='instructions'><p>Welcome to the " +
-        	 "experiment. Press enter to begin.</p></div>";
+        	 "experiment.</p><p> Press enter to begin.</p></div>";
 
            
 		var before_begin = "<div id='instructions'><p>Before you begin, please keep in mind that " +
-			"there are no right or wrong answers " +
-	    		"for each question choose the option that you prefer most. Press enter to begin.</p>";
+			"there are no right or wrong answers! " +
+	    		"</p><p>For each question choose the option that you prefer most.</p><p> Press enter to begin.</p>";
 	 
   		//RING Measure
 		var instructions_RM = "<div id='instructions'><p>In this task you have been randomly " +
-    		"paired with another person, whom we will refer to simply as the other. This other person " +
+    		"paired with another person, whom we will refer to simply as the <b>other</b>.</p><p>This other person " +
    		"is someone you do not know and will remain mutually anonymous. " +
    		"All of your choices are completely confidential. " +
-   		"You will be making a series of choices about allocating resources between you and this anonymous " +
+   		"</p><p>You will be making a series of choices about allocating resources between you and this anonymous " +
    		"other person. " +
-   		"You will indicate your choices by pressing the left or right arrow key on each of the following questions. " + 
-   		"Press the left arrow key if you want to choose Option A. " +
-   		"Press the right arrow key if you want to choose Option B. " +
-   		"Your decisions will yield money for both yourself and the other person. " +
-   		"In the example below, a person has chosen to distribute money so that he/she receives 100 points, " +
+   		"</p><p>You will indicate your choices by pressing the left or right arrow key on each of the following questions. " + 
+   		"</p><p><b>Press the left arrow key if you want to choose Option A. " +
+   		"</p><p>Press the right arrow key if you want to choose Option B.</b> " +
+   		"</p><p>Your decisions will yield money for both yourself and the other person. " +
+   		"</p><p>In the example below, a person has chosen to distribute money so that he/she receives 100 points, " +
    		"where as the anonymous other person receives 80 points." +
-   		"To highlight the choice column B has been circled. " +
    		"</p><p><img src='Ring Measure/Ring Measure Beispiel.gif'></p><p>" +
-   		"Remember you have to use the arrow keys to indicate your choice. " +
    		"As you can see, your choices will influence both the amount of money you receive" +
    		"and the amount of money the other receives. " +
-		"Press enter to begin.</p>";
+   		"</p><p>Remember you have to use the arrow keys to indicate your choice. </p><p>" +
+		"</p><p>Press enter to begin.</p>";
 
 	//Allocationtask Instruction
 	var instructions_AT = "<div id='instructions'><p>In the following tasks you will again be paired with " +
-		"an anonymous other person. You will be making a series of choices about allocating resources " +
+		"an <b>anonymous other person</b>. </p><p>You will be making a series of choices about allocating resources " +
 		"between you and this other person. This other person " +
    		"is someone you do not know and will remain mutually anonymous. " +
-   		"All of your choices are completely confidential. " +
-   		"You will indicate your choices by pressing the left or right arrow key on each of the following questions. " + 
-   		"Press the left arrow key if you want to choose Option A. " +
-   		"Press the right arrow key if you want to choose Option B. " +
-   		"Your decisions will yield money for both yourself and the other person. " +
-   		"The options show the payment you will receive, the payment of the other, " +
+   		"All of your choices are completely confidential. </p><p>" +
+   		"</p><p>You will indicate your choices by pressing the left or right arrow key on each of the following questions. " + 
+   		"</p><p><b>Press the left arrow key if you want to choose Option A. " +
+   		"</p><p>Press the right arrow key if you want to choose Option B.</b> " +
+   		"</p><p>Your decisions will yield money for both yourself and the other person. " +
+   		"</p><p>The options show the payment you will receive, the payment of the other, " +
    		"the total amount of money and the difference between your payment and the payment of the other person. " +
-   		"Together you receive 180 points and the difference between your payment and the payment of the other " +
-   		"person is 20 points." + 
-   		"In the example below, a person has chosen to distribute money so that he/she receives 100 points, " +
+   		"</p><p>In the example below, a person has chosen to distribute money so that he/she receives 100 points, " +
    		"where as the anonymous other person receives 80 points." +
-   		"To highlight the choice column B has been circled. " +
+   		"Together you receive 180 points and the difference between your payment and the payment of the other " +
+   		"person is 20 points." +
    		"</p><p><img src='Allocation Task/Allocation_Task_Beispiel.gif'></p><p>" +
-   		"Remember you have to use the arrow keys to indicate your choice. " +
    		"As you can see, your choices will influence both the amount of money you receive" +
    		"and the amount of money the other receives. " +
-   		"For your participation in this study you will receive a basic payment," +
+   		"</p><p>For your participation in this study you will receive a basic payment," +
    		"but the choices you make will influence your bonus payment as well as the bonus payment of the other person. " +
-   		"Each point equals one cent, e.g. 80 points = 80 cents. " +
-		"Press enter to begin.</p>";
+   		"Each point equals one cent, e.g. 80 points = 80 cents.</p><p> " +
+   		
+		"</p><p>Press enter to begin.</p>";
 	
 
         	//Ringmeasure
@@ -969,58 +960,56 @@
     	} else if (wuerfeln == 1){
     				 // Experiment Instructions
         	var welcome_message = "<div id='instructions'><p>Welcome to the " +
-        	 "experiment. Press enter to begin.</p></div>";
+        	 "experiment.</p><p> Press enter to begin.</p></div>";
 
            
 		var before_begin = "<div id='instructions'><p>Before you begin, please keep in mind that " +
-			"there are no right or wrong answers " +
-	    		"for each question choose the option that you prefer most. Press enter to begin.</p>";
+			"there are no right or wrong answers! " +
+	    		"</p><p>For each question choose the option that you prefer most.</p><p> Press enter to begin.</p>";
 	 
-  		//RING Measure
+  	//RING Measure
 		var instructions_RM = "<div id='instructions'><p>In this task you have been randomly " +
-    		"paired with another person, whom we will refer to simply as the other. This other person " +
+    		"paired with another person, whom we will refer to simply as the <b>other</b>.</p><p>This other person " +
    		"is someone you do not know and will remain mutually anonymous. " +
    		"All of your choices are completely confidential. " +
-   		"You will be making a series of choices about allocating resources between you and this anonymous " +
+   		"</p><p>You will be making a series of choices about allocating resources between you and this anonymous " +
    		"other person. " +
-   		"You will indicate your choices by pressing the left or right arrow key on each of the following questions. " + 
-   		"Press the left arrow key if you want to choose Option A. " +
-   		"Press the right arrow key if you want to choose Option B. " +
-   		"Your decisions will yield money for both yourself and the other person. " +
-   		"In the example below, a person has chosen to distribute money so that he/she receives 100 points, " +
+   		"</p><p>You will indicate your choices by pressing the left or right arrow key on each of the following questions. " + 
+   		"</p><p><b>Press the left arrow key if you want to choose Option A. " +
+   		"</p><p>Press the right arrow key if you want to choose Option B.</b> " +
+   		"</p><p>Your decisions will yield money for both yourself and the other person. " +
+   		"</p><p>In the example below, a person has chosen to distribute money so that he/she receives 100 points, " +
    		"where as the anonymous other person receives 80 points." +
-   		"To highlight the choice column B has been circled. " +
    		"</p><p><img src='Ring Measure/Ring Measure Beispiel.gif'></p><p>" +
-   		"Remember you have to use the arrow keys to indicate your choice. " +
    		"As you can see, your choices will influence both the amount of money you receive" +
    		"and the amount of money the other receives. " +
-		"Press enter to begin.</p>";
+   		"</p><p>Remember you have to use the arrow keys to indicate your choice. </p><p>" +
+		"</p><p>Press enter to begin.</p>";
 
 	//Allocationtask Instruction
 	var instructions_AT = "<div id='instructions'><p>In the following tasks you will again be paired with " +
-		"an anonymous other person. You will be making a series of choices about allocating resources " +
+		"an <b>anonymous other person</b>. </p><p>You will be making a series of choices about allocating resources " +
 		"between you and this other person. This other person " +
    		"is someone you do not know and will remain mutually anonymous. " +
-   		"All of your choices are completely confidential. " +
-   		"You will indicate your choices by pressing the left or right arrow key on each of the following questions. " + 
-   		"Press the left arrow key if you want to choose Option A. " +
-   		"Press the right arrow key if you want to choose Option B. " +
-   		"Your decisions will yield money for both yourself and the other person. " +
-   		"The options show the payment you will receive, the payment of the other, " +
+   		"All of your choices are completely confidential. </p><p>" +
+   		"</p><p>You will indicate your choices by pressing the left or right arrow key on each of the following questions. " + 
+   		"</p><p><b>Press the left arrow key if you want to choose Option A. " +
+   		"</p><p>Press the right arrow key if you want to choose Option B.</b> " +
+   		"</p><p>Your decisions will yield money for both yourself and the other person. " +
+   		"</p><p>The options show the payment you will receive, the payment of the other, " +
    		"the total amount of money and the difference between your payment and the payment of the other person. " +
-   		"Together you receive 180 points and the difference between your payment and the payment of the other " +
-   		"person is 20 points." + 
-   		"In the example below, a person has chosen to distribute money so that he/she receives 100 points, " +
+   		"</p><p>In the example below, a person has chosen to distribute money so that he/she receives 100 points, " +
    		"where as the anonymous other person receives 80 points." +
-   		"To highlight the choice column B has been circled. " +
+   		"Together you receive 180 points and the difference between your payment and the payment of the other " +
+   		"person is 20 points." +
    		"</p><p><img src='Allocation Task/Allocation_Task_Beispiel.gif'></p><p>" +
-   		"Remember you have to use the arrow keys to indicate your choice. " +
    		"As you can see, your choices will influence both the amount of money you receive" +
    		"and the amount of money the other receives. " +
-   		"For your participation in this study you will receive a basic payment," +
+   		"</p><p>For your participation in this study you will receive a basic payment," +
    		"but the choices you make will influence your bonus payment as well as the bonus payment of the other person. " +
-   		"Each point equals one cent, e.g. 80 points = 80 cents. " +
-		"Press enter to begin.</p>";
+   		"Each point equals one cent, e.g. 80 points = 80 cents.</p><p> " +
+   		
+		"</p><p>Press enter to begin.</p>";
 	
 
         	//Ringmeasure
