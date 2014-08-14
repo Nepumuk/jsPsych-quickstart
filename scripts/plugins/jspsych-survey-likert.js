@@ -91,8 +91,8 @@
                     "id": "jspsych-survey-likert-sliderlabels-" + i,
                     "class": 'jspsych-survey-likert-sliderlabels survey-likert',
                     "css": {
-                        "width": "10%",
-                        "margin": "25px 25px 25px 25px",
+                        "width": "100%",
+                        "margin": "25px 0px 0px 0px",
                         "padding": "0px",
                         "display": "block",
                         "position": "relative"
@@ -127,8 +127,8 @@
                 'id': 'jspsych-survey-likert-next',
                 'class': 'jspsych-survey-likert',
                 "css": {
-                        "width": "100%",
-                        "margin": "10px 0px 0px 0px",
+                        "width": "10%",
+                        "margin": "50px 50px 50px 50px",
                         "padding": "0px",
                         "display": "block",
                         "position": "center"
