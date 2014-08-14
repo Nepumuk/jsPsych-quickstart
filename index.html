@@ -194,77 +194,42 @@
         };
 	
 	var wuerfeln = Math.ceil(Math.random(0,2) * 6);
-	if (wuerfeln <= 1){
-		jsPsych.init({
+	jsPsych.init({
+		if (wuerfeln <= 1){
         	display_element: $('#jspsych_target'),
        		experiment_structure: [instruction_block, survey_block, instruction1_block, test_block_RM,
           	instruction2_block, test_block_Tasks, likert_block, survey2_block],
-          	 on_finish: function(data) {
-                 $("#jspsych_target").append($('<pre>', {
-                     html: jsPsych.dataAsCSV()
-                 }));
- 
-                 jsPsych.saveCSVdata("data.csv");
-             }
-         });
-        } else if (wuerfeln == 2){
-        	jsPsych.init({
+          	
+        	} else if (wuerfeln == 2){
+        	
            	display_element: $('#jspsych_target'),
         	experiment_structure: [instruction_block, survey_block, instruction1_block, test_block_RM, likert_block,
         	instruction2_block, test_block_Tasks, survey2_block],
-        	 on_finish: function(data) {
-                 $("#jspsych_target").append($('<pre>', {
-                     html: jsPsych.dataAsCSV()
-                 }));
- 
-                 jsPsych.saveCSVdata("data.csv");
-             }
-         });
-       	} else if (wuerfeln == 3){
-       		jsPsych.init({
+        
+       		} else if (wuerfeln == 3){
+  
         	display_element: $('#jspsych_target'),
         	experiment_structure: [instruction_block, survey_block, likert_block, instruction1_block, test_block_RM, 
         	instruction2_block, test_block_Tasks, survey2_block],
-        	 on_finish: function(data) {
-                 $("#jspsych_target").append($('<pre>', {
-                     html: jsPsych.dataAsCSV()
-                 }));
- 
-                 jsPsych.saveCSVdata("data.csv");
-             }
-         });
-        } else if (wuerfeln == 4){
-          	jsPsych.init({
+        
+        	} else if (wuerfeln == 4){
+          	
         	display_element: $('#jspsych_target'),  	
           	experiment_structure: [instruction_block, survey_block, instruction1_block, test_block_RM,
             	instruction2_block, test_block_Tasks, likert_block, survey2_block],
-            	 on_finish: function(data) {
-                 $("#jspsych_target").append($('<pre>', {
-                     html: jsPsych.dataAsCSV()
-                 }));
- 
-                 jsPsych.saveCSVdata("data.csv");
-             }
-         });
-        } else if (wuerfeln == 5){
-        	jsPsych.init({
+            	
+        	} else if (wuerfeln == 5){
+        	
         	display_element: $('#jspsych_target'),
             	experiment_structure: [instruction_block, survey_block, instruction1_block, test_block_RM, 
             	likert_block, instruction2_block, test_block_Tasks, survey2_block],
-            	 on_finish: function(data) {
-                 $("#jspsych_target").append($('<pre>', {
-                     html: jsPsych.dataAsCSV()
-                 }));
- 
-                 jsPsych.saveCSVdata("data.csv");
-             }
-         });
+            	
         } else (wuerfeln == 6){
-        	jsPsych.init({
+        	
         	display_element: $('#jspsych_target'),
         	experiment_structure: [instruction_block, survey_block, likert_block, instruction1_block, 
         	test_block_RM, instruction2_block, test_block_Tasks, survey2_block],
-        	} //Ende if
+        	}, //Ende if
         	
         	on_finish: function(data) {
                  $("#jspsych_target").append($('<pre>', {
