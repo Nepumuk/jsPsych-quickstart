@@ -91,8 +91,8 @@
                     "id": "jspsych-survey-likert-sliderlabels-" + i,
                     "class": 'jspsych-survey-likert-sliderlabels survey-likert',
                     "css": {
-                        "width": "100%",
-                        "margin": "10px 0px 0px 0px",
+                        "width": "10%",
+                        "margin": "25px 25px 25px 25px",
                         "padding": "0px",
                         "display": "block",
                         "position": "relative"
