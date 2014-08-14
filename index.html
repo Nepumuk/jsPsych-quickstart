@@ -145,7 +145,8 @@
         var scale_1 = ["1 = never/ definitely not", "2", "3", "4", "5", "6", "7", "8", "9 = always/ definitely yes"];
 
         //defining questions that go together
-       	var page_1_questions = ["<p>Please listen to</p><p><audio src='audio/summer.mp3'></p><p> and type the word you hear.</p>"];
+       	var page_1_questions = ["<p>Please listen to<audio src="audio.mp3" id="mp3" preload="auto"></audio>
+        			<input type="button" value="Click to play MP3" onClick="playMP3();" /> and type the word you hear.</p>"];
         var page_2_questions = ["Did you feel stressed during the experiment?"];
 	var page_3_questions = ["Age", "Gender", "Nationality", "In which country did you live most of your life?"];
 	var page_4_questions = ["What do you think was tested in this experimemt?"];
