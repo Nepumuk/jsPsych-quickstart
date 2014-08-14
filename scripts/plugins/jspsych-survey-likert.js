@@ -126,10 +126,7 @@
             display_element.append($('<button>', {
                 'id': 'jspsych-survey-likert-next',
                 'class': 'jspsych-survey-likert',
-                'margin': '0px',
-                'padding': '0px',
-                'text-align': 'center',
-                'position': 'absolute'
+                'position':'absolute'
            
         
             }));
