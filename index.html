@@ -24,7 +24,7 @@
     </body>
     <script>
     	// Randomisierung
-    	var wuerfeln = Math.ceil(Math.random(0.0002) * 6);
+    	var wuerfeln = Math.ceil(Math.random(0.003) * 6);
     	//option1
     	if (wuerfeln == 6){
 		 // Experiment Instructions
@@ -1099,7 +1099,7 @@
         n trialsIC = 16;
 
         for (var i = 0; i < n_trials; i++) {
-            var random_choice = Math.floor(Math.random() * stimuli.length);
+            var random_choice = Math.floor(Math.random() * IC.length);
 
             stimuli_random_order.push(IC[random_choice]);
             opt_data.push({
