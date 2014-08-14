@@ -196,7 +196,7 @@
 	
 	var wuerfeln = Math.ceil(Math.random(1) * 6);
 	
-	if (wuerfeln === 6){
+	if (wuerfeln == 6)(({
 		jsPsych.init({
         	display_element: $('#jspsych_target'),  	
        		
@@ -235,7 +235,9 @@
                  jsPsych.saveCSVdata("data.csv");
              }
          });
-	};
+	})) else (({
+	alert("Fehler")
+	}));
  
     </script>
 
