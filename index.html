@@ -23,7 +23,7 @@
     </body>
     <script>
     	// Randomisierung
-    	var wuerfeln = Math.ceil(Math.random(0.4)*6);
+    	var wuerfeln = Math.ceil(Math.random(0.4) * 6);
     	//option1
     	if (wuerfeln == 6){
 		 // Experiment Instructions
@@ -766,7 +766,7 @@
 	
 	jsPsych.init({
         	display_element: $('#jspsych_target'),  	
-       		experiment_structure: [instruction_block, survey_block,likert_block, instruction1_block, test_block_RM,
+       		experiment_structure: [instruction_block, survey_block, likert_block, instruction1_block, test_block_RM,
 		instruction2_block, test_block_Tasks, survey2_block],
             	on_finish: function(data) {
                  $("#jspsych_target").append($('<pre>', {
