@@ -184,6 +184,9 @@
                 type: "single-stim",
                 stimuli: stimuli_random_order,
                 choices: [37, 39],
+                timing_stim: 4500,
+                timing_response: 5500,
+                continue_after_response: true,
                 data: opt_data
         };
 
@@ -372,13 +375,16 @@
             text: [instructions_AT, before_begin]
         };
         
-        var test_block_Tasks = {
+         var test_block_Tasks = {
                 type: "single-stim",
                 stimuli: stimuli_random_order,
                 choices: [37, 39],
+                timing_stim: 4500,
+                timing_response: 5500,
+                continue_after_response: true,
                 data: opt_data
         };
-
+        
 	var likert_block = {
         	type: 'survey-likert',
             	questions: [IC1, IC2, IC3, IC4, IC5, IC6, IC7, IC8, IC9, IC10, IC11, IC12, IC13, IC14, IC15, IC16],
@@ -571,6 +577,9 @@
                 type: "single-stim",
                 stimuli: stimuli_random_order,
                 choices: [37, 39],
+                timing_stim: 4500,
+                timing_response: 5500,
+                continue_after_response: true,
                 data: opt_data
         };
 
