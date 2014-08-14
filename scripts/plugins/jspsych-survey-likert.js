@@ -130,7 +130,7 @@
                         "width": "10%",
                         "margin": "200px 550px 150px 200px",
                         "padding": "0px",
-                        "right" : "absolut"
+                        "right" : "absolut",
                         "text-align": 'center',
                         'position': 'absolute',
                     }
